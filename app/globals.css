@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a1a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a1a1a;
+    --foreground: #f1f5f5;
+  }
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.prose-aiol {
+  @apply max-w-none;
+}
+.prose-aiol h1 {
+  @apply text-3xl font-bold mt-8 mb-4 text-brand-800;
+}
+.prose-aiol h2 {
+  @apply text-2xl font-semibold mt-8 mb-3 text-brand-700;
+}
+.prose-aiol h3 {
+  @apply text-xl font-semibold mt-6 mb-2 text-brand-700;
+}
+.prose-aiol h4 {
+  @apply text-lg font-semibold mt-4 mb-2;
+}
+.prose-aiol p {
+  @apply my-3 leading-7;
+}
+.prose-aiol ul {
+  @apply list-disc pl-6 my-3 space-y-1;
+}
+.prose-aiol ol {
+  @apply list-decimal pl-6 my-3 space-y-1;
+}
+.prose-aiol table {
+  @apply w-full border-collapse my-6 text-sm;
+}
+.prose-aiol th {
+  @apply border border-slate-300 bg-brand-50 px-3 py-2 text-left font-semibold;
+}
+.prose-aiol td {
+  @apply border border-slate-300 px-3 py-2 align-top;
+}
+.prose-aiol strong {
+  @apply font-semibold text-brand-800;
+}
+.prose-aiol blockquote {
+  @apply border-l-4 border-accent-gold bg-amber-50 px-4 py-2 my-4 italic;
+}
+.prose-aiol code {
+  @apply bg-slate-100 px-1 py-0.5 rounded text-sm;
+}

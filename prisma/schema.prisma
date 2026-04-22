@@ -1,0 +1,194 @@
+// AI Operator Licence (AIOL) platform — data model.
+//
+// Using SQLite for MVP simplicity (single file, zero external services).
+// All array-like content is stored as JSON strings so the schema is
+// portable to Postgres later by only changing the datasource provider.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String            @id @default(cuid())
+  email          String            @unique
+  name           String?
+  image          String?
+  entraOid       String?           @unique
+  role           String            @default("LEARNER") // LEARNER | ADMIN
+  createdAt      DateTime          @default(now())
+  emailVerified  DateTime?
+  accounts       Account[]
+  sessions       Session[]
+  progress       ModuleProgress[]
+  attempts       QuizAttempt[]
+  edits          ContentEdit[]
+  xapiStatements XApiStatement[]
+}
+
+// Auth.js required models (Prisma adapter).
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// Content models — mirrored from /content/** on first boot, editable via admin UI.
+model Tier {
+  id             String   @id // "tier1"
+  title          String
+  tagline        String?
+  audience       String?
+  order          Int      @default(0)
+  estMinutes     Int      @default(0)
+  passThreshold  Float    @default(0.8)
+  renewal        String?
+  philosophy     String?
+  appendix       String?  // appendix MDX
+  version        Int      @default(1)
+  updatedAt      DateTime @updatedAt
+  modules        Module[]
+  quizzes        Quiz[]
+}
+
+model Module {
+  id            String           @id // "module-1.1"
+  moduleNumber  String           // "1.1"
+  tierId        String
+  order         Int
+  title         String
+  estMinutes    Int              @default(0)
+  objectivesJson String          @default("[]") // JSON string array
+  bodyMdx       String           // full MDX source
+  requiresJson  String           @default("[]") // JSON string array of module ids
+  version       Int              @default(1)
+  updatedAt     DateTime         @updatedAt
+  updatedById   String?
+  tier          Tier             @relation(fields: [tierId], references: [id], onDelete: Cascade)
+  progress      ModuleProgress[]
+
+  @@index([tierId, order])
+}
+
+model Quiz {
+  id                   String        @id // "t1-final"
+  tierId               String
+  title                String
+  description          String?
+  passThreshold        Float         @default(0.8)
+  maxAttempts          Int           @default(3)
+  timeLimitMinutes     Int           @default(30)
+  questionsPerAttempt  Int           @default(20)
+  shuffle              Boolean       @default(true)
+  shuffleOptions       Boolean       @default(true)
+  moduleDistribution   String        @default("{}") // JSON object { "1.1": 4, ... }
+  version              Int           @default(1)
+  updatedAt            DateTime      @updatedAt
+  tier                 Tier          @relation(fields: [tierId], references: [id], onDelete: Cascade)
+  questions            Question[]
+  attempts             QuizAttempt[]
+}
+
+model Question {
+  id           String   @id
+  quizId       String
+  moduleRef    String?
+  lo           String?
+  difficulty   String?  // Easy | Medium | Hard
+  tagsJson     String   @default("[]")
+  type         String   @default("single") // single | multi | trueFalse
+  prompt       String
+  optionsJson  String   // JSON [{id, text}]
+  correctJson  String   // JSON array of option ids
+  rationale    String?
+  order        Int      @default(0)
+  quiz         Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+
+  @@index([quizId, moduleRef])
+}
+
+model ModuleProgress {
+  userId      String
+  moduleId    String
+  completedAt DateTime?
+  lastViewed  DateTime  @default(now())
+  timeSeconds Int       @default(0)
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  module      Module    @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+
+  @@id([userId, moduleId])
+}
+
+model QuizAttempt {
+  id             String    @id @default(cuid())
+  userId         String
+  quizId         String
+  startedAt      DateTime  @default(now())
+  completedAt    DateTime?
+  expiresAt      DateTime  // startedAt + timeLimitMinutes
+  score          Float?    // 0..1
+  passed         Boolean?
+  questionIds    String    // JSON array of chosen question ids
+  responsesJson  String    @default("[]") // JSON [{questionId, answer: [optionId], correct}]
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quiz           Quiz      @relation(fields: [quizId], references: [id], onDelete: Cascade)
+
+  @@index([userId, quizId])
+}
+
+model ContentEdit {
+  id         String   @id @default(cuid())
+  entityType String // "module" | "quiz" | "question" | "tier"
+  entityId   String
+  diffJson   String // before/after
+  editedById String
+  editedAt   DateTime @default(now())
+  editor     User     @relation(fields: [editedById], references: [id], onDelete: Cascade)
+
+  @@index([entityType, entityId])
+}
+
+model XApiStatement {
+  id         String   @id @default(cuid())
+  userId     String
+  verb       String   // e.g. "completed", "attempted", "passed"
+  objectType String   // "module" | "quiz"
+  objectId   String
+  resultJson String?  // optional scoring data
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+}

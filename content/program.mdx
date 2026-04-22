@@ -1,0 +1,564 @@
+---
+title: AMS AI Operator Licence Program
+type: reference
+---
+
+
+3sHealth
+
+AI Operator Licence Program
+AMS Sprint 2 Master Plan
+
+Complete Program Package with Agile Breakdown — AMS Scope
+
+**Prepared by:** — Application Management Services (AMS)
+
+**Date:** — April 2026
+
+**Version:** — 2.1 (PO Reviewed)
+
+**Classification:** — Internal — Draft
+
+**Audience:** — AMS Leadership, AIOps Sprint Team
+
+**Scope:** — AMS — Application Management Services
+
+
+# Table of Contents
+
+# 1. Program Overview
+
+**** — MISSION STATEMENT<br />Ensure every AMS team member who uses AI tools is trained, certified, and accountable — enabling innovation while protecting data, operations, and stakeholder trust.
+
+
+The AMS AI Operator Licence Program (3s-AIOL) is a mandatory certification program ensuring every AMS team member who uses AI tools understands what AI can and cannot do, knows their responsibilities for data protection and privacy, can identify AI errors, hallucinations, and bias, follows established protocols, and maintains accountability.
+The core philosophy: "Human verify, Human decide, Human accountable."
+AI capabilities are embedding into every platform AMS manages. Oracle Fusion 26A/26B ships with AI agents for finance, procurement, and HCM. Microsoft 365 Copilot is being deployed across the organization. ServiceNow is adding AI-powered ticket routing, knowledge search, and virtual agents. While governance structures exist around AI and agent management, they have not yet been formalized into a structured training and certification framework — which is what this program addresses.
+The risk is not that AMS adopts AI too quickly. The risk is that AI adoption outpaces our formalized training and accountability structures, leading to data exposure, compliance gaps, operational errors, and loss of stakeholder trust.
+## Why "Operator Licence"?
+- You don’t need to be a mechanic to drive — staff don’t need to be data scientists to use AI
+- Different vehicles need different licences — M365 Copilot needs less training than building Oracle AI agents
+- You can lose your licence — non-compliance has consequences
+- Regular renewal — AI evolves, training must too
+## Scope
+| Scope Area | In Scope | Out of Scope |
+| --- | --- | --- |
+| Platforms | Oracle Fusion (ERP/HCM/SCM/EPM), ServiceNow, M365, BI | Clinical AI systems |
+| AI Types | Copilot, AI agents, coding assistants (Claude Code, GPT, Codex) | Clinical decision support AI |
+| Users | All AMS staff | 3sHealth staff other than AMS (future expansion) |
+| Activities | Admin AI, AI-assisted app development, workflow automation | Vendor internal AI dev practices |
+
+## Pilot Group
+The AMS Application Services Management team serves as the first pilot cohort. This team manages the core enterprise platforms (Oracle Fusion, ServiceNow, M365) where AI integration is actively progressing. Target: first certified users within 90 days.
+
+# 2. Core Principles & AUP Alignment
+
+The 3s-AIOL program is the training and enforcement mechanism for the 3sHealth AI Acceptable Use Policy (AUP v2). Every principle in the AUP maps to specific training content. The AUP operates as a child policy under the AIGC AI Policy — the overarching governance document for AI use across Saskatchewan’s health system.
+| AUP Key Principle | Training Tier | Curriculum Coverage |
+| --- | --- | --- |
+| Know what AI is and understand its limitations | Tier 1 — Modules 1.1, 1.3 | AI fundamentals, hallucinations, bias, errors |
+| Use AI lawfully, ethically, and responsibly | Tier 1 — M1.4; Tier 2 — M2.5 | FOIP/HIPA obligations, ethics in admin AI |
+| Use AI securely per policies | Tier 1 — M1.4; Tier 2 — M2.4 | Data classification, tenant boundaries, approved tools |
+| Maintain meaningful human control | All Tiers — Core | Human-bookend model: human at start, agent in middle, human at end |
+| Understand the AI lifecycle | Tier 3 — M3.2; Tier 4 — Session 2 | Tool evaluation, governance, decommissioning |
+| Use the right AI tool for the task | Tier 2 — M2.3; Tier 3 — M3.2 | Risk classification matrix, tool approval |
+| Use AI openly and transparently | Tier 2 — M2.5 | Disclosure requirements, AI-assisted documentation |
+| Ensure users have required skills | Entire Program | Certification-before-access model |
+
+## AUP Data Rules — Covered in Training
+- Public data: Permitted in any approved AI tool.
+- Internal data: Only organization-approved AI tools; external/public cloud AI tools prohibited.
+- Confidential / PHI / PII: Must NOT be processed in external AI tools. PHI must be de-identified unless explicit consent obtained.
+- Restricted data: Current AUP states this must not be processed in any AI tools. However, this classification requires further evaluation for agentic and local model scenarios — to be reviewed with the AI Steering Committee.
+These classifications are taught in Tier 1 Module 1.4 and practiced hands-on in Tier 2 Module 2.4.
+## Human Accountability Model
+The program adopts a human-bookend model for AI-assisted work: the human initiates and defines the task, the AI agent or tool executes, and the human reviews, validates, and takes accountability for the output. This applies whether the AI interaction is a quick Copilot prompt or a multi-hour agentic workflow. The principle is consistent: humans are accountable for the content they produce with AI assistance.
+**** — NOTE: HR ENGAGEMENT REQUIRED<br />The human accountability framework for AI-assisted work needs to be developed in partnership with HR. This includes defining the accountability process when employees use AI tools, how AI-assisted outputs are attributed, and the appropriate escalation and corrective action framework. There is no existing whistleblower policy specific to AI — the HR engagement will determine how reporting and accountability are handled within existing or new policy structures.
+
+
+# 3. Certification Framework
+
+**** — Tier 1: Awareness Tier 2: Practitioner Tier 3: Champion Tier 4: Governance
+
+**Who** — All AMS staff Daily AI users (AMS analysts, service desk, dev teams) AMS team leads & managers AMS leadership, Steering Committee reps
+
+**Duration** — ~2 hours (self-paced) 8 hours (2×4hr blended) 16 hours (4×4hr instructor-led) 24 hours (6×4hr intensive)
+
+**Renewal** — Annual Annual Biannual Biannual
+
+**Prerequisite** — None Tier 1 Tier 2 + nomination Tier 3 (or exemption)
+
+**Assessment** — 20 MCQ (80% pass) Practical + written (70%) Capstone + presentation Policy deliverable + simulation
+
+**Tool Access** — None (awareness only) Role-specific approved tools All approved + admin Full + governance/config
+
+## Access Control Integration
+Certification status ties to Active Directory. Expired certification results in access revocation within 24 hours. Tier 1 holders have no AI tool access (awareness only). Tier 2 and above unlocks role-specific tools. This is the enforcement backbone of the AUP’s “certification required” mandate.
+## Equivalency & Exemptions
+Staff with existing AI certifications (Google AI Essentials, Microsoft AI Fundamentals, etc.) may apply for Tier 2 equivalency. All exemptions still require Tier 1 completion — AMS-specific context is mandatory.
+## Compliance & Enforcement
+| Violation | Response |
+| --- | --- |
+| Using AI tools without certification | Access revoked, mandatory re-certification |
+| Using unapproved AI tools (Shadow AI) | Access revoked, manager notification, re-training |
+| AI-related data breach | Investigation per FOIP/HIPA protocols, potential certification revocation |
+| Repeated non-compliance | Escalation to manager and HR per accountability framework |
+
+
+# 4. Tier 1 — AI Awareness
+
+Audience: All AMS Staff  |  Duration: ~2 hours (online, self-paced)  |  Renewal: Annual  |  Assessment: 20 MCQ from 60-question bank, 80% pass, 3 attempts
+## Module 1.1: What Is AI? (30 min)
+### Learning Objectives
+- Define artificial intelligence, machine learning, and generative AI in plain language
+- Distinguish between AI and traditional software
+- Identify common AI applications in everyday life and AMS-managed systems
+### Content
+- AI in Plain Language — “AI is software that learns from data to make predictions or generate content”
+- Types of AI — Rule-based vs. machine learning vs. generative AI
+- AI You Already Use — Autocomplete, spell check, spam filters, GPS routing
+- AI in AMS Systems — Oracle Fusion AI features, M365 Copilot, ServiceNow Virtual Agent
+- What AI Is NOT — Not sentient, not infallible, not a replacement for human judgment
+### Activity
+“Is This AI?” interactive quiz — 10 examples from AMS-managed systems where learners identify which features use AI.
+### Deliverables to Build
+- Video script (5-7 min explainer) covering AI types with AMS-specific examples
+- Interactive quiz: 10 scenario cards with correct answers and explanations
+- LMS slide deck (12-15 slides) with voiceover notes
+- 5 quiz questions for the 60-question bank
+## Module 1.2: AI at AMS (20 min)
+### Learning Objectives
+- Identify AI tools currently approved or planned within AMS-managed platforms
+- Understand the AI Operator Licence program and why it exists
+- Know your role in responsible AI adoption
+### Content
+- Current AI landscape and approved tool register
+- What’s Coming — Oracle 26A/26B AI features, M365 Copilot rollout, ServiceNow AI
+- The Operator Licence Model — Why training-before-access, how the tiers work
+- Your Role — Every AMS team member responsible for safe AI use (AUP Section 11.5)
+- AI Steering Committee and AIGC — Existing governance structures and how they relate
+### Activity
+“Your AI Footprint” — learners identify 3 AI-powered features they already interact with daily.
+### Deliverables to Build
+- Infographic: AMS AI landscape (current + planned tools)
+- CIO/Director video message script or talking points (3 min)
+- Slide deck (8-10 slides) with system screenshots
+- 4 quiz questions for the question bank
+## Module 1.3: AI Risks and Limitations (25 min)
+### Learning Objectives
+- Explain what AI hallucinations are and why they occur
+- Identify types of AI bias and their impact on administrative systems
+- Recognize the limits of AI accuracy in payroll, finance, and procurement contexts
+### Content
+- Hallucinations — AI can generate confident, plausible, completely wrong information
+- Bias — AI trained on biased data produces biased outputs (hiring, procurement, HR)
+- Errors in Admin Context — Incorrect payroll, wrong GL coding, misleading reports
+- The Confidence Problem — AI doesn’t say “I don’t know”
+- Impact at AMS — Real-world scenario examples from AMS-managed systems
+### Activity
+“Spot the Hallucination” — review 3 AI-generated admin outputs (financial summary, HR response, procurement recommendation) and identify the errors.
+### Deliverables to Build
+- 3 realistic AI-generated admin output scenarios with embedded errors
+- Detailed answer key with error type classifications
+- Slide deck (10-12 slides) with visual examples
+- Interactive exercise template for LMS
+- 6 quiz questions for the question bank
+## Module 1.4: Privacy, Data, and Your Obligations (25 min)
+### Learning Objectives
+- Explain FOIP, HIPA, and LAFOIPP requirements related to AI use
+- Know what data can and cannot be entered into AI tools per the AUP data classification
+- Understand the approved vs. unapproved tool distinction and consequences of Shadow AI
+### Content
+- FOIP Act — Freedom of Information and Protection of Privacy (Saskatchewan)
+- HIPA — Health Information Protection Act
+- AUP Data Classification — Public → Internal → Confidential/PHI/PII → Restricted
+- Data Explicitly Prohibited — PHI, PII, credentials, legal/HR/financial records, source code (AUP Table 2)
+- The Golden Rule — Never enter sensitive data into unapproved AI tools
+- Shadow AI — Using unapproved AI tools is a policy violation (AUP Section 12)
+- M365 Copilot Boundaries — Tenant security, data residency requirements
+- Note: Restricted data classification for agentic and local model scenarios is under review by the AI Steering Committee
+### Activity
+“Can You Enter This?” — 5 scenario cards where learners classify data as safe/caution/prohibited for different AI tools.
+### Deliverables to Build
+- Data classification quick-reference card (printable PDF + LMS version)
+- 5 scenario cards with AUP-referenced answers
+- Slide deck (12-15 slides) highlighting AUP data rules
+- Laminated desk reference card design for print
+- 6 quiz questions for the question bank
+## Module 1.5: Reporting and Accountability (20 min)
+### Learning Objectives
+- Know how to report AI incidents or concerns via ServiceNow
+- Understand the human-bookend accountability model — human initiates, AI executes, human validates
+- Know where to get help — AI help desk, FAQ, your AI Champion
+### Content
+- Human Accountability — YOU initiate, YOU verify, YOU are accountable for the output (AUP Section 7.1)
+- The Human-Bookend Model — Human at start, agent in middle, human at end — applies to quick prompts and multi-hour agentic workflows alike
+- When to Report — Incorrect output, data concern, bias detected, Shadow AI observed
+- How to Report — ServiceNow AI Incident Category (AUP Section 7.6)
+- Escalation: manager → IT Security/ESS → AIGC
+- Reporting Culture — Good-faith reporting of AI concerns is encouraged. The accountability framework for AI-assisted work is being developed in partnership with HR.
+### Activity
+Scenario walkthrough: “The AI-generated financial report shows wrong figures. Walk through the complete reporting process.”
+### Deliverables to Build
+- Incident reporting flowchart (visual + text versions)
+- Scenario walkthrough script with branching decisions
+- “See Something, Report Something” one-pager
+- Slide deck (8-10 slides)
+- 5 quiz questions for the question bank
+## Tier 1 Assessment Design
+| Element | Detail |
+| --- | --- |
+| Format | 20 multiple-choice questions, randomized from bank of 60 |
+| Pass Rate | 80% (16/20) |
+| Attempts | 3, with question randomization between attempts |
+| Time Limit | 30 minutes |
+| Distribution | Module 1.1 (4Q), M1.2 (3Q), M1.3 (5Q), M1.4 (5Q), M1.5 (3Q) |
+| Annual Renewal | 15-question quiz, 30-60 min refresher covering updates since last certification |
+
+
+# 5. Tier 2 — AI Practitioner
+
+Audience: AMS daily AI users — analysts, service desk, dev teams  |  Duration: 8 hours (2×4hr)  |  Delivery: Blended  |  Assessment: Practical + written, 70% pass
+## Session 1: Using AI Effectively (4 hours)
+### Module 2.1: Prompt Engineering for Admin Systems (60 min)
+- Anatomy of a Good Prompt — Context + Task + Format + Constraints framework
+- Admin-Specific Prompting — Templates for reports, correspondence, data analysis, documentation
+- Development Prompting — Code generation, refactoring, debugging, test creation with AI assistants
+- Platform-Specific Guidance — M365 Copilot vs. Oracle AI vs. ServiceNow vs. Claude Code/GPT/Codex
+- Do’s and Don’ts — What to NEVER include (AUP Section 4 data rules)
+- Prompt Library — 25+ pre-approved templates for common AMS tasks
+Lab: Write and test prompts for 5 common work scenarios. Scored on effectiveness + data safety.
+Deliverables: Prompt engineering guide (20+ pages), 25+ templates, lab workbook, 4 platform quick-reference cards, sandbox config.
+### Module 2.2: Evaluating AI Output — The FACTS Framework (60 min)
+- The FACTS Framework — Factual accuracy, Attribution, Completeness, Tone, Safety
+- Red Flags — Overconfident claims, hallucinated references, statistical fabrication
+- Cross-Referencing — Checking against Oracle Fusion data, policy docs, authoritative sources
+- Human-Bookend Validation — Every AI output gets human review before action, whether from a quick prompt or a multi-hour agent run (AUP Section 7.4)
+- When to Reject — Unverifiable output must not be used
+Lab: Review 10 AI-generated admin documents, identify and correct errors using FACTS.
+Deliverables: FACTS reference card, 10 error documents, answer key, scoring rubric, video walkthrough (10 min).
+### Module 2.3: AI Tools in Your Role — 4 Tracks (60 min)
+- Track A — Oracle Fusion: AI agents (26A/26B) for finance, procurement, HCM; AI-assisted reporting; analytics features
+- Track B — ServiceNow: Virtual Agent, AI ticket routing, knowledge suggestions, Predictive Intelligence, Now Assist
+- Track C — M365/General Admin: Copilot in Word/Excel/PowerPoint/Outlook/Teams; meeting notes; data analysis
+- Track D — Application Development: Claude Code/GPT/Codex; secure prompting; mandatory code review; security scanning; testing AI code; IP/licensing; audit trail
+Lab: Complete 3 role-specific tasks in sandbox. Observed and scored.
+Deliverables: 4 track workbooks (3 exercises each), sandbox setup guides, facilitator guide.
+### Module 2.4: Data Handling and Privacy in Practice (60 min)
+- Data Classification for AI — Safe to input, requires de-identification, prohibited
+- AMS Data Categories — Payroll, financial, employee, vendor, PHI adjacency (AUP Section 4)
+- M365 Tenant Boundaries — What Copilot can/cannot access; data residency
+- Oracle Data Security — Row-level security implications for AI features
+- Audit Trail — Documenting AI-assisted work (AUP Section 7.3)
+- Restricted Data Review — Discuss evolving classification for agentic/local model scenarios
+Lab: Classify 10 realistic data scenarios as safe/caution/prohibited.
+Deliverables: 10 scenario cards, data handling decision tree, 3 platform boundary guides, audit trail template.
+## Session 2: Working Responsibly with AI (4 hours)
+### Module 2.5: AI Ethics in Administrative Systems (60 min)
+- Bias in HR/Payroll AI — Hiring screening, performance analysis, pay equity (AUP Section 7.2)
+- Fairness in Procurement AI — Vendor scoring, automated recommendations
+- Transparency — When to disclose AI assistance (AUP Section 7.3)
+- Accountability Chain — Employee always responsible for outcomes (AUP Section 7.1)
+- Copyright and IP — Review AI content for IP concerns (AUP Section 7.5)
+Deliverables: 3 ethics case studies, accountability chain diagram, disclosure quick-reference.
+### Module 2.6: Workflow Integration (60 min)
+- The AI Decision Tree — “Should I use AI for this task?”
+- Workflow Mapping — Identifying high-value AI integration points
+- Documentation Standards — How to note “AI-assisted” in records, commits, and reports
+Deliverables: AI Decision Tree poster, workflow mapping template, documentation standards guide.
+### Module 2.7: Incident Management (60 min)
+- Incident Categories — Data/privacy, output error, bias, Shadow AI, system, security, financial
+- Severity Levels — Critical, High, Medium, Low with response SLAs
+- ServiceNow Reporting — Step-by-step walkthrough of AI Incident Category
+- Escalation per AUP Section 7.6: manager → IT Security/ESS → AIGC
+Deliverables: ServiceNow config guide, severity matrix, 3 practice scenarios, escalation path visual.
+### Module 2.8: Practical Assessment (60 min)
+| Task | Duration | Description |
+| --- | --- | --- |
+| Task 1 | 15 min | Complete a role-specific task using an approved AI tool |
+| Task 2 | 15 min | Evaluate an AI-generated output using FACTS, identify 3+ issues |
+| Task 3 | 10 min | Classify 5 data scenarios for AI processing |
+| Task 4 | 10 min | Walk through an incident reporting scenario |
+| Task 5 | 10 min | Written reflection on AI use in your role |
+
+Pass Rate: 70% aggregate, no section below 50%. 5 assessment variants.
+
+# 6. Tier 3 — AI Champion (Outlined)
+
+Audience: AMS Team Leads & Managers  |  Duration: 16 hours  |  Renewal: Biannual  |  Prerequisite: Tier 2 + nomination
+Full detail in Sprint 3 after Tier 1 & 2 pilot feedback.
+| Session | Topic | Duration | Key Competencies |
+| --- | --- | --- | --- |
+| Session 1 | Leading AI Adoption | 4 hours | Change management, tool evaluation, pilot design, success metrics |
+| Session 2 | Governance & Compliance | 4 hours | FOIP/HIPA/PIPEDA, AI procurement, vendor assessment, risk management |
+| Session 3 | Technical Foundations for Leaders | 4 hours | How AI works (non-technical), Oracle/M365/ServiceNow AI roadmaps, secure dev oversight |
+| Session 4 | Capstone | 4 hours | Training others, capstone presentation |
+
+# 7. Tier 4 — AI Governance (Outlined)
+
+Audience: AMS Leadership, Steering Committee reps  |  Duration: 24 hours  |  Renewal: Biannual
+Full detail in Sprint 4. Duration may be condensed.
+| Session | Topic | Duration | Focus |
+| --- | --- | --- | --- |
+| Session 1 | AI Strategy & Vision | 4 hours | Healthcare admin AI landscape 2026, gap analysis, opportunity mapping |
+| Session 2 | Advanced Governance & Policy | 4 hours | Governance design, policy lifecycle, regulatory navigation, liability |
+| Session 3 | Technical Deep Dive | 4 hours | AI architectures, data governance, security threats, OCI/Azure |
+| Session 4 | Ethics & Equity | 4 hours | Admin AI bias, data sovereignty, OCAP principles, employee consent |
+| Session 5 | Economics & Procurement | 4 hours | ROI methodology, TCO, RFP design, vendor licensing |
+| Session 6 | Simulation & Certification | 4 hours | Steering Committee simulation, policy defense |
+
+
+# 8. AUP Integration Map
+
+This traceability matrix ensures every AUP requirement is explicitly taught, practiced, and assessed within the AMS context.
+| AUP Section | Requirement | Training Module(s) | Assessment |
+| --- | --- | --- | --- |
+| §3 Principles | Know AI and limitations | T1-M1.1, T1-M1.3 | Tier 1 Quiz |
+| §3 Principles | Use AI lawfully/ethically | T1-M1.4, T2-M2.5 | Quiz + Ethics case study |
+| §4 Data Rules | Data classification compliance | T1-M1.4, T2-M2.4 | Quiz + Tier 2 Lab |
+| §4 Data Rules | PHI de-identification | T1-M1.4, T2-M2.4 | Data scenario exercises |
+| §5 Tool Approval | Approved tools only | T1-M1.2, T2-M2.3 | Quiz + practical demo |
+| §6 Prohibited Uses | No autonomous decisions without review | T1-M1.5, T2-M2.5 | Scenario walkthroughs |
+| §7.1 Human Review | Human-bookend validation on all outputs | T1-M1.5, T2-M2.2 | FACTS framework lab |
+| §7.2 Bias | Identify and mitigate bias | T1-M1.3, T2-M2.5 | Ethics case study |
+| §7.3 Transparency | Disclose AI-generated content | T2-M2.5, T2-M2.6 | Documentation exercise |
+| §7.4 Verification | Verify facts/citations/calculations | T2-M2.2 | FACTS lab (10 documents) |
+| §7.5 Copyright/IP | Review for IP concerns | T2-M2.5 | Ethics discussion |
+| §7.6 Incident Reporting | Report to manager + ESS + AIGC | T1-M1.5, T2-M2.7 | ServiceNow walkthrough |
+| §9 Training | Foundational training before AI use | Tier 1 (mandatory) | Certification gate |
+| §10 High-Risk | Pre-approval for high-risk use cases | T3-M3.3, T3-M3.4 | Tier 3 capstone |
+| §12 Enforcement | Non-compliance consequences | T1-M1.4, T1-M1.5 | Tier 1 Quiz |
+
+
+# 9. Implementation Plan
+
+| Phase | Timeline | Key Milestones | Exit Criteria |
+| --- | --- | --- | --- |
+| Phase 1: Foundation | Days 1-90 | Build Tier 1 & 2 content, AMS pilot certification, approve core policies | AMS pilot team 100% Tier 2 certified, LMS operational, policies approved |
+| Phase 2: AMS Rollout | Months 4-6 | Launch Tier 1 across AMS (50% target), expand Tier 2, develop Tier 3, first tool approvals | 50%+ AMS Tier 1, 50+ Tier 2, 3-5 tools approved |
+| Phase 3: Maturity | Months 7-12 | 80% AMS Tier 1, 100+ Tier 2, first Tier 3 & 4 cohorts, evaluation, Year 2 plan | 80%+ Tier 1, leadership Tier 4 certified, 10+ tools |
+
+**** — CURRENT SPRINT FOCUS<br />Sprint 2 — Phase 1, Month 2 (Build Content). Immediate deliverables: complete Tier 1 & 2 curriculum, build content artifacts, configure LMS, prepare for AMS pilot.
+
+
+# 10. Agile Structure
+
+Epic: AMS AI Operator Licence Program (3s-AIOL)
+Features: Major program components (each tier, governance, assessment, LMS, comms, pilot)
+Stories: User-centered work items within each feature
+Tasks: Concrete implementation steps within each story
+## Feature Roadmap
+| ID | Feature | Stories | Sprint | Status |
+| --- | --- | --- | --- | --- |
+| F-01 | Tier 1: AI Awareness Curriculum | 3 | Sprint 2 | Active |
+| F-02 | Tier 2: AI Practitioner Curriculum | 9 | Sprint 2 | Active |
+| F-03 | Assessment & Certification System | 5 | Sprint 2-3 | Planned |
+| F-04 | LMS Configuration & Integration | 4 | Sprint 2 | Active |
+| F-05 | AUP Training Integration | 3 | Sprint 2 | Active |
+| F-06 | AMS Pilot Execution | 5 | Sprint 3 | Planned |
+| F-07 | Tier 3: AI Champion Curriculum | 6 | Sprint 3-4 | Backlog |
+| F-08 | Tier 4: AI Governance Curriculum | 4 | Sprint 4-5 | Backlog |
+| F-09 | Communication & Change Management | 4 | Sprint 2-3 | Planned |
+| F-10 | Governance Framework & Risk Matrix | 4 | Sprint 2-3 | Planned |
+
+
+# 11. Full Backlog — Stories & Tasks
+
+## F-01: Tier 1 — AI Awareness Curriculum (Sprint 2)
+S-01.1  Tier 1 Module Content Development  (13 pts)
+Acceptance Criteria:
+- Module 1.1 has video script, 10-scenario activity, slide deck, 5 quiz questions
+- Module 1.2 has AI landscape infographic, video concept, slide deck, 4 quiz questions
+- Module 1.3 has 3 error scenarios with answer key, slide deck, 6 quiz questions
+- Module 1.4 covers AUP §4 data classification, has quick-reference card, 5 scenario cards, desk reference design, 6 quiz questions — reviewed by Privacy Officer
+- Module 1.5 has incident reporting flowchart (AUP §7.6), scenario walkthrough, one-pager, 5 quiz questions
+- All content uses AMS scope and human-bookend accountability model
+Tasks:
+- Module 1.1 — Draft video script, create slides, design 10 scenario cards, write 5 quiz questions
+- Module 1.2 — Catalog AI tools, design landscape infographic, draft video script, create slides, write 4 quiz questions
+- Module 1.3 — Generate 3 AI error outputs, create answer key, build slides, design exercise, write 6 quiz questions
+- Module 1.4 — Map AUP §4 to content, create quick-reference card, write 5 scenario cards, design desk reference, build slides, write 6 quiz questions
+- Module 1.5 — Create incident flowchart, write scenario script, design one-pager, build slides, write 5 quiz questions
+- Privacy & Security Review — Submit M1.4 to Privacy Officer, M1.5 to IT Security for review
+
+S-01.2  Tier 1 Assessment & Quiz Bank  (5 pts)
+Acceptance Criteria:
+- 60-question bank complete and mapped to modules/objectives
+- Questions reviewed for clarity and difficulty
+- Answer key with rationale, formatted for LMS import
+Tasks:
+- Compile 26 module questions + write 34 additional, map to objectives
+- Create answer key with rationale, peer review full bank
+- Format for LMS import, test randomization logic
+
+S-01.3  Tier 1 Annual Renewal Module  (2 pts)
+Acceptance Criteria:
+- 30-60 min renewal module structure defined
+- 15 renewal quiz questions written
+- LMS renewal workflow documented
+Tasks:
+- Design renewal module structure and annual refresh template
+- Write 15 renewal questions, document LMS notification/grace/revocation workflow
+
+## F-02: Tier 2 — AI Practitioner Curriculum (Sprint 2)
+S-02.1  Prompt Engineering Module (2.1)  (8 pts)
+Acceptance Criteria:
+- 20+ page guide with AMS examples per platform
+- 25+ prompt templates
+- Lab workbook with 5 scored scenarios
+- 4 platform quick-reference cards
+Tasks:
+- Draft prompt engineering guide with theory + examples
+- Create 25+ templates (7 Copilot, 6 Oracle, 5 ServiceNow, 7 coding)
+- Design 5 lab scenarios with rubric, create 4 reference cards
+- Test in sandbox, peer review
+
+S-02.2  FACTS Framework Module (2.2)  (8 pts)
+Acceptance Criteria:
+- FACTS reference card actionable
+- 10 documents with realistic errors
+- Scoring rubric, video walkthrough scripted
+Tasks:
+- Design FACTS card (print + digital)
+- Generate 10 AI outputs with 3-5 errors each, create answer key
+- Design rubric, script video walkthrough, test with colleagues
+
+S-02.3  4 Role-Track Workbooks (2.3)  (13 pts)
+Acceptance Criteria:
+- 4 workbooks with 3 exercises each
+- Sandbox setup per track
+- Facilitator guide covers all 12 exercises
+Tasks:
+- Design Track A (Oracle), B (ServiceNow), C (M365), D (Development) exercises
+- Create sandbox setup guide, write facilitator guide with scoring
+- Test in sandbox environments, iterate
+
+S-02.4  Data Handling Module (2.4)  (5 pts)
+Acceptance Criteria:
+- 10 scenarios cover full AUP spectrum including restricted data discussion
+- Decision tree clear
+- 3 platform boundary guides
+Tasks:
+- Design 10 scenarios, create answer key citing AUP
+- Build decision tree, write 3 platform guides, create audit trail template
+- Review with Privacy Officer
+
+S-02.5  Ethics Module (2.5)  (5 pts)
+Acceptance Criteria:
+- 3 case studies cover HR, procurement, financial bias
+- Accountability diagram created
+- Disclosure reference complete
+Tasks:
+- Write 3 case studies with discussion guides
+- Create accountability chain diagram, build disclosure reference
+
+S-02.6  Workflow Integration Module (2.6)  (3 pts)
+Acceptance Criteria:
+- Decision Tree poster created
+- Mapping template tested
+- Documentation standards guide complete
+Tasks:
+- Design Decision Tree poster, create fillable mapping template
+- Write documentation standards guide, test with 2 AMS workflows
+
+S-02.7  Incident Management Module (2.7)  (5 pts)
+Acceptance Criteria:
+- ServiceNow AI category documented
+- Severity matrix clear
+- 3 practice scenarios created
+Tasks:
+- Document ServiceNow requirements, create severity matrix
+- Write 3 scenarios, create escalation visual, coordinate with ServiceNow admin
+
+S-02.8  Tier 2 Practical Assessment  (8 pts)
+Acceptance Criteria:
+- Detailed rubric for 5 tasks
+- 5 variants prevent memorization
+- Assessor guide with model answers
+Tasks:
+- Design rubric (5 tasks, weighted, 70% pass)
+- Create 5 variants per task, write assessor guide, design tracking form
+
+S-02.9  Tier 2 Facilitator Guide  (5 pts)
+Acceptance Criteria:
+- Guide covers both sessions
+- Participant checklist ready
+- Materials organized
+Tasks:
+- Write Session 1 and Session 2 facilitator guides
+- Create participant checklist, assemble package, pilot dry run
+
+## F-04: LMS Configuration & Integration (Sprint 2)
+S-04.1  LMS Configuration  (5 pts)
+Acceptance Criteria:
+- Course structure mirrors 4-tier model
+- Prerequisites enforce progression
+- Quiz engine supports randomization
+Tasks:
+- Evaluate LMS capabilities, configure 4-tier structure
+- Set up prerequisites, quiz engine, tracking dashboards, test certificates
+
+S-04.2  Active Directory Integration  (8 pts)
+Acceptance Criteria:
+- LMS triggers AD group changes
+- Expired certs revoke access in 24 hours
+Tasks:
+- Design AD group structure, map to app access
+- Build LMS-AD integration, implement auto-revoke, test lifecycle, document
+
+S-04.3  Reporting Dashboards  (3 pts)
+Acceptance Criteria:
+- Dashboard shows rates by tier/team/individual
+- Expiration warnings
+- Exportable
+Tasks:
+- Design dashboard, build tracking reports, configure expiration warnings and export
+
+S-04.4  Sandbox Environments  (5 pts)
+Acceptance Criteria:
+- Sandboxes for all 4 tracks
+- Sample data loaded
+- Access provisioned for pilot
+Tasks:
+- Provision instances, configure coding sandbox, load synthetic data
+- Test exercises, create access process, document reset procedure
+
+## F-05: AUP Training Integration (Sprint 2)
+S-05.1  AUP Traceability Matrix  (3 pts)
+Acceptance Criteria:
+- Complete AUP-to-training matrix documented
+- Reviewed by CISO/Privacy representative
+Tasks:
+- Build detailed matrix, identify gaps
+- Review with CISO representative, publish in documentation
+
+S-05.2  AUP Prohibited Data Integration  (5 pts)
+Acceptance Criteria:
+- AUP Table 2 referenced in Tier 1 and Tier 2 exercises
+- Realistic scenarios for each prohibited data type
+Tasks:
+- Create scenarios for each AUP Table 2 type, integrate into M1.4 and M2.4
+- Write facilitator notes, test with pilot group
+
+S-05.3  AI Licence Responsibilities Card  (2 pts)
+Acceptance Criteria:
+- Card links each tier to AUP obligations
+- Designed for desk and digital
+Tasks:
+- Design card mapping tiers to duties with key contacts
+- Create print PDF and digital version, review and approve
+
+
+## Backlog Summary
+| Metric | Count |
+| --- | --- |
+| Total Features | 10 |
+| Stories (Sprint 2 Active) | 25 |
+| Stories (Backlog Sprint 3+) | 23 |
+| Total Estimated Story Points | ~140 |
+
+
+
+3sHealth — Health Shared Services Saskatchewan
+AI Operator Licence Program — AMS Sprint 2 Master Plan v2.1
+Internal — Draft — April 2026 — PO Reviewed

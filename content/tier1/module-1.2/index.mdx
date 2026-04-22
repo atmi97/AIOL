@@ -1,0 +1,86 @@
+---
+id: module-1.2
+moduleNumber: "1.2"
+title: "AI at AMS"
+tierId: tier1
+order: 2
+estMinutes: 20
+objectives:
+  - "Identify AI tools currently approved or planned within AMS-managed platforms"
+  - "Describe the purpose and structure of the AI Operator Licence Program"
+  - "Describe your personal role in responsible AI adoption at 3sHealth"
+---
+
+# Module 1.2 — AI at AMS
+
+### 1.2.1 The current AI landscape at AMS
+
+AMS — Application Management Services — is the team that keeps 3sHealth's administrative platforms running. AI is arriving on every one of those platforms at the same time, on different timelines, with different risk profiles. The job of the AI Operator Licence Program is to make sure that wherever AI arrives next, the people using it have already been trained.
+
+The snapshot of approved and in-progress AI tools lives in the AMS Approved AI Tool Register, maintained by the AI Steering Committee. By the time you read this, it will have changed. Always consult the live register — do not rely on what a colleague told you last month.
+
+**Where to find the live tool register<br />The Approved AI Tool Register is published on the 3sHealth intranet under IT Governance. It lists which AI tools are approved, for which data classifications, and which Tier is required to use them.<br />If a tool is not on the register, it is not approved. Using an unapproved AI tool — even for what feels like a low-risk task — is Shadow AI and is a policy violation under AUP Section 12.**
+
+### 1.2.2 What is coming
+
+Three platform trajectories are worth understanding now, because they frame why this program exists.
+
+#### Oracle Fusion 26A and 26B
+
+Oracle has embedded AI agents into Fusion Applications across finance, procurement, and human capital. These agents can draft narratives for financial periods, propose purchase requisition corrections, flag anomalies, and assist HR partners with case summaries. Some agents act on data; some generate content only. The distinction matters — we will treat agents that take action on Fusion data as higher-risk than agents that produce drafts for human review.
+
+#### Microsoft 365 Copilot
+
+Copilot is rolling out across Word, Excel, PowerPoint, Outlook, and Teams. Because Copilot operates inside the 3sHealth Microsoft tenant, it has access — with your permissions — to emails, documents, and Teams conversations you can already see. It does not expose that content to the public internet. But it will happily summarize the PHI that sits in an Outlook thread if you ask it to, and the summary inherits the sensitivity of the source. Tenant security does not remove the need for human judgment.
+
+#### ServiceNow AI
+
+ServiceNow is adding Virtual Agent for self-service ticket creation, AI-powered ticket routing, Now Assist for agent-facing summaries, and Predictive Intelligence for incident grouping. AMS service desk staff will interact with these most. An incorrectly summarized ticket is a small problem; an incorrectly routed high-severity ticket is a bigger one. The training in Tier 2 Module 2.3 Track B is designed around these workflows.
+
+### 1.2.3 Why an "operator licence"?
+
+The program uses a deliberate metaphor. You do not need to be a mechanic to drive a car, but you do need a licence — because driving is useful, common, and has real consequences when done badly. The same is true of AI at work.
+
+- You don't need to be a data scientist to use AI. The training is aimed at practical, responsible use — not model internals.
+- Different vehicles need different licences. A Copilot user does not need the same training as a developer using Claude Code to build an automation.
+- You can lose your licence. Non-compliance with the AUP results in access revocation, per AUP Section 12.
+- Regular renewal is required. AI evolves; training evolves with it. Tier 1 renews annually.
+### 1.2.4 The four tiers at a glance
+
+| Tier | Audience | What it unlocks | Renewal |
+| --- | --- | --- | --- |
+| Tier 1 — Awareness | All AMS staff | No tool access. Awareness-only. | Annual |
+| Tier 2 — Practitioner | Daily AI users — analysts, service desk, devs | Role-specific approved tools | Annual |
+| Tier 3 — Champion | Team leads and managers | All approved plus admin surfaces | Biannual |
+| Tier 4 — Governance | AMS leadership, Steering Committee reps | Full plus governance and configuration | Biannual |
+
+
+Tier 1 is a prerequisite for every other tier. Even staff who already hold an external AI certification — Google AI Essentials, Microsoft AI Fundamentals, and similar — must complete Tier 1 for the 3sHealth-specific content (AUP, Saskatchewan privacy law, AMS platform examples, incident reporting process). Equivalency applies at Tier 2.
+
+### 1.2.5 Governance — AIGC and the AI Steering Committee
+
+The AUP does not stand alone. It is a child policy under the broader AI Policy maintained by the AIGC — the AI Governance Committee — which is the overarching governance body for AI use across Saskatchewan's health system. The AI Steering Committee is the operational body that reviews proposed AI tools, evaluates risk, and decides what gets added to the approved tool register.
+
+What this means for you in Tier 1: you do not need to know the full organization chart, but you should know that there is a legitimate process for requesting approval of a new AI tool, that the process takes time, and that "I couldn't wait, so I just used it" is not an acceptable shortcut. When you need an AI capability that the register does not offer, raise it through your manager.
+
+### 1.2.6 Your role
+
+The AUP is explicit on this point. Every AMS team member who uses AI is personally responsible for safe, lawful, ethical, and policy-compliant use. Tier 1 makes sure you know what that responsibility looks like in practice. The short version:
+
+- Use only tools on the approved register, at the classifications they are approved for.
+- Never enter prohibited data into any AI tool.
+- Review every AI output before you act on it or send it.
+- Report incidents — bad outputs, bias, data concerns, observed Shadow AI — through ServiceNow.
+- Keep your Tier 1 certification current. Renewal is annual.
+### 1.2.7 Activity: "Your AI footprint"
+
+Take three minutes. Write down three AI-powered features you interact with in a typical workday. At least one should be inside an AMS-managed platform (Oracle, ServiceNow, M365, BI). For each, note whether you think it is generative AI, machine learning, or rule-based. There is no single right answer — the point is to make your current exposure visible to yourself.
+
+### 1.2.8 Module summary
+
+- AI is arriving on every AMS-managed platform — Oracle Fusion 26A/26B, M365 Copilot, ServiceNow AI.
+- The authoritative list of approved AI tools is the AMS Approved AI Tool Register. If it's not there, it's not approved.
+- The operator licence model trains you to use AI responsibly without requiring you to become a data scientist.
+- Four tiers exist. Tier 1 is a prerequisite for everything else and is an awareness-only tier — no tool access yet.
+- AUP sits under the broader AI Policy governed by AIGC, with the AI Steering Committee as the operational review body.
+- You are personally responsible for safe AI use. Renewal is annual.

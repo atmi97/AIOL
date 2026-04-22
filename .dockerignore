@@ -1,0 +1,14 @@
+**/node_modules
+**/.next
+**/.git
+**/.DS_Store
+**/*.log
+**/coverage
+.env
+.env.*
+!.env.example
+*.db
+*.db-journal
+source-docs/
+docs/
+README*.md

@@ -1,0 +1,48 @@
+{
+  "id": "tier1",
+  "title": "Tier 1 — AI Awareness",
+  "tagline": "Foundational certification in the AMS AI Operator Licence Program",
+  "audience": "All AMS staff",
+  "estMinutes": 120,
+  "passThreshold": 0.8,
+  "renewal": "Annual",
+  "philosophy": "Human verify, Human decide, Human accountable.",
+  "modules": [
+    {
+      "id": "1.1",
+      "slug": "module-1.1",
+      "title": "What Is AI?",
+      "estMinutes": 30,
+      "order": 1
+    },
+    {
+      "id": "1.2",
+      "slug": "module-1.2",
+      "title": "AI at AMS",
+      "estMinutes": 20,
+      "order": 2
+    },
+    {
+      "id": "1.3",
+      "slug": "module-1.3",
+      "title": "AI Risks and Limitations",
+      "estMinutes": 25,
+      "order": 3
+    },
+    {
+      "id": "1.4",
+      "slug": "module-1.4",
+      "title": "Privacy, Data, and Your Obligations",
+      "estMinutes": 25,
+      "order": 4
+    },
+    {
+      "id": "1.5",
+      "slug": "module-1.5",
+      "title": "Reporting and Accountability",
+      "estMinutes": 20,
+      "order": 5
+    }
+  ],
+  "appendix": "## Appendix A — Tier 1 Assessment Design\n\nThe Tier 1 assessment is the 80% gate for certification. It is a 20-question multiple-choice test drawn randomly from a bank of 60 questions. The question bank is maintained as a separate companion document (Tier 1 Quiz Bank, XLSX) to allow direct LMS import.\n\n#### Assessment parameters\n\n| Format | 20 multiple-choice questions, randomized per attempt from a 60-question bank |\n| --- | --- |\n| Pass rate | 80% (16 out of 20) |\n| Attempts | 3, with question randomization between attempts |\n| Time limit | 30 minutes |\n| Annual renewal | 15-question refresher, 30–60 minute module covering updates since previous certification |\n\n#### Question distribution across modules\n\n| Module | Questions per 20-question attempt | Bank allocation | Coverage emphasis |\n| --- | --- | --- | --- |\n| 1.1 — What Is AI? | 4 | 12 | Definitions, categories, AI vs. traditional software, what AI is not |\n| 1.2 — AI at AMS | 3 | 8 | Approved register, tier model, governance structure, your role |\n| 1.3 — AI Risks | 5 | 14 | Hallucinations, bias, errors, confidence problem |\n| 1.4 — Privacy & Data | 5 | 14 | Saskatchewan privacy law, classification, approved vs. unapproved, Shadow AI |\n| 1.5 — Reporting | 3 | 12 | Human-bookend model, incident categories, ServiceNow process, escalation |\n\n## Appendix B — Data Classification Quick Reference\n\nIntended as a one-page desk reference. Print-ready version in the companion design pack.\n\n| Classification | Examples | Approved AI tools | External AI tools |\n| --- | --- | --- | --- |\n| Public | Published press releases, public financial reports, job postings, 3shealth.ca content | Permitted | Permitted only in reputable tools — but prefer approved tools |\n| Internal | Internal process docs, non-personal meeting notes, drafts, aggregate analytics | Permitted in approved tenanted tools | Prohibited |\n| Confidential / PHI / PII | Employee records, payroll, benefit claims, EFAP data, HR investigations, anything tied to a named person | Permitted only where tool is approved for this classification; PHI requires de-identification unless documented consent | Prohibited |\n| Restricted | Credentials, legal hold material, privileged communications, critical source code | Prohibited pending Steering Committee review for agentic/local scenarios | Prohibited |\n\n## Appendix C — Glossary\n\n| Agent (AI agent) | An AI system that can take action beyond producing content — calling APIs, updating records, initiating workflows. Higher risk profile than a generative assistant. |\n| --- | --- |\n| AIGC | AI Governance Committee — the overarching governance body for AI use across Saskatchewan's health system. The AI Policy that sits above the AUP is maintained by AIGC. |\n| AI Steering Committee | The operational body that reviews proposed AI tools, evaluates risk, and decides what gets added to the Approved AI Tool Register. |\n| AMS | Application Management Services — the 3sHealth team responsible for administrative application platforms (Oracle Fusion, ServiceNow, M365, BI). |\n| Approved tool | An AI tool that appears on the AMS Approved AI Tool Register, for the specific data classification in use, and at the Tier level held by the user. |\n| AUP | AI Acceptable Use Policy — the 3sHealth policy that defines how AI may be used. Child policy under the broader AI Policy maintained by AIGC. |\n| Bias | Systematic skew in AI output reflecting skew in training data. Distinct from hallucination. |\n| FACTS | Tier 2 framework for evaluating AI output: Factual accuracy, Attribution, Completeness, Tone, Safety. |\n| FOIP / LA FOIP | Freedom of Information and Protection of Privacy Act and Local Authority Freedom of Information and Protection of Privacy Act (Saskatchewan). |\n| Generative AI | AI systems that produce new content — text, code, images — rather than classifying or predicting. The primary focus of this program. |\n| Hallucination | AI-generated content that is confidently presented and factually wrong. The most important failure mode to internalize. |\n| HIPA | Health Information Protection Act (Saskatchewan). Governs personal health information. Enforced by the Saskatchewan Information and Privacy Commissioner. |\n| Human-bookend model | The accountability structure for AI-assisted work: human at the start to define and prompt, AI in the middle to execute, human at the end to verify and take accountability. |\n| Machine learning | AI that learns a model from historical data and applies it to new inputs. Usually narrower than generative AI. |\n| PHI | Personal Health Information. Governed by HIPA. |\n| PIPEDA | Personal Information Protection and Electronic Documents Act (Federal). Applies to commercial activities. |\n| PII | Personal Information — data that identifies an individual. |\n| Prompt | The input to a generative AI tool. The content you type or paste that tells the AI what to do. |\n| Shadow AI | Use of AI tools not on the approved register for 3sHealth work. A policy violation in itself, per AUP Section 12. |\n| Tenant | The slice of a cloud service that belongs to a specific organization. Tenanted M365 Copilot operates inside the 3sHealth tenant boundary; personal Copilot does not. |\n\n## Appendix D — Land Acknowledgement\n\nWe acknowledge that 3sHealth works and meets on the territory covered by Treaties 2, 4, 5, 6, 7, 8, and 10, the traditional territories of the Cree, Saulteaux, Dakota, Lakota, Nakota, Stoney, and Dene, and the Homeland of the Métis/Michif.\n"
+}

@@ -1,0 +1,122 @@
+---
+id: module-1.4
+moduleNumber: "1.4"
+title: "Privacy, Data, and Your Obligations"
+tierId: tier1
+order: 4
+estMinutes: 25
+objectives:
+  - "Describe, in plain language, FOIP, LA FOIP, HIPA, and PIPEDA, and how they apply to 3sHealth"
+  - "Apply the AUP data classification — Public, Internal, Confidential/PHI/PII, Restricted — to realistic AMS data"
+  - "Distinguish approved from unapproved AI tools, and explain the consequences of Shadow AI"
+  - "Decide, for a given piece of data and a given AI tool, whether the data can be entered"
+---
+
+# Module 1.4 — Privacy, Data, and Your Obligations
+
+### 1.4.1 The Saskatchewan privacy landscape
+
+Four pieces of legislation frame AI use at 3sHealth. You do not need to be a lawyer — you do need to know which one applies when, what each one is primarily concerned with, and where to go when the answer is not obvious.
+
+| Law | What it protects | Applies to |
+| --- | --- | --- |
+| FOIP — The Freedom of Information and Protection of Privacy Act (Sask.) | Personal information held by the provincial government. | Saskatchewan government institutions. Some 3sHealth work touches FOIP through ministry partners. |
+| LA FOIP — The Local Authority Freedom of Information and Protection of Privacy Act (Sask.) | Personal information held by local authorities. | Local authorities including regional health authorities, schools, municipalities. Saskatchewan Health Authority (SHA) is a local authority under LA FOIP. |
+| HIPA — The Health Information Protection Act (Sask.) | Personal health information. The most central law for health-system shared services. | Trustees — including SHA, 3sHealth when acting as an information management service provider, physicians, pharmacists, hospitals. |
+| PIPEDA — Personal Information Protection and Electronic Documents Act (Federal) | Personal information collected, used, or disclosed in commercial activity. | Commercial activity federally and, because Saskatchewan does not have substantially similar private-sector legislation, any commercial activity within Saskatchewan that is not otherwise covered. |
+
+
+**Why this matters for AI specifically<br />When you enter data into an AI tool, you are collecting, using, and potentially disclosing that data — all regulated acts under the applicable Act. Whether the disclosure is permitted depends on the legal authority for the collection, whether consent is required, and where the data ends up.<br />An unapproved public AI tool that processes its inputs on infrastructure outside of Canada may take an otherwise routine internal document and turn it into a potential disclosure event. That is why the approved tool register exists.**
+
+### 1.4.2 3sHealth's position
+
+3sHealth is a not-for-profit corporation that delivers shared administrative services to the Saskatchewan health system. Depending on the service line and the underlying contract, 3sHealth acts as an information management service provider under HIPA, handles employee personal information subject to applicable legislation, and processes operational data that belongs to client organizations. The common thread: the data is rarely "ours" in a simple sense — it is held in trust, under contract, and under a specific privacy regime.
+
+That is why the AUP restrictions feel strong. They are.
+
+### 1.4.3 The AUP data classification
+
+The AUP sorts data into four classifications. Tier 1 teaches the classifications; Tier 2 Module 2.4 drills on applying them in harder, ambiguous scenarios.
+
+#### Public
+
+Information that is already lawfully public — published press releases, public financial reports, open-access policy documents on the 3shealth.ca website, job postings. Public data is permitted in any approved AI tool. The only real restriction: do not mix public data with other classifications in the same prompt, because the output inherits the sensitivity of everything in the input.
+
+#### Internal
+
+Information that is not secret but also not published: internal process documentation, meeting notes that do not contain personal information, draft materials, internal analytics at an aggregate level. Internal data can only be used with organization-approved AI tools — tools on the register, at the tenant boundary approved for that classification. External or public cloud AI tools (ChatGPT on the open web, free-tier consumer Claude, Gemini consumer, public-tier Copilot on a personal Microsoft account) are prohibited for internal data.
+
+#### Confidential — PHI, PII
+
+Personal Health Information and Personal Information that identify an individual: employee records, payroll, benefit claims, EFAP case notes, HR investigations, contractor SINs, anything tied to a named employee, client, or patient. This is the bucket that the highest share of 3sHealth administrative work involves. The AUP is explicit: PHI and PII must not be processed in external AI tools, and PHI must be de-identified unless explicit consent has been obtained and documented. Even inside approved tools, the principle of data minimization applies: do not include more personal information than the task actually requires.
+
+#### Restricted
+
+Data whose unauthorized disclosure would cause significant harm — credentials, security tokens, legal hold material, privileged communications, certain categories of financial and regulatory data, and source code for critical systems. The current AUP states that restricted data must not be processed in any AI tool. This classification is under active review for agentic and local-model scenarios by the AI Steering Committee. For Tier 1, the rule is simple: restricted data does not go into any AI tool until this review concludes and is communicated.
+
+### 1.4.4 Data explicitly prohibited
+
+AUP Table 2 lists the categories of data that are explicitly prohibited from AI tool input. Tier 1 learners are expected to recognize these categories on sight:
+
+- Personal Health Information (PHI) — diagnoses, treatments, benefit claim details, EFAP records.
+- Personal Information (PII) — SINs, home addresses, employee ID tied to a named individual.
+- Credentials — passwords, API keys, database connection strings, security tokens.
+- Legal and HR records — investigations, performance management documentation, grievance files, legal hold material.
+- Sensitive financial records — non-public financial statements, audit working papers, payroll detail at the individual level.
+- Source code for critical systems, especially anything that includes embedded credentials or data samples.
+**Guardrail — the golden rule<br />Never enter prohibited data into an unapproved AI tool.<br />Never enter prohibited data into any AI tool unless the tool is approved for that specific data classification on the register.<br />When in doubt, do not enter. Ask your manager or the Privacy Officer.**
+
+### 1.4.5 Approved versus unapproved tools
+
+"Approved" is a specific term in this program. A tool is approved when it appears on the AMS Approved AI Tool Register, for the specific data classification in question, and you hold the Tier level required to use it.
+
+An unapproved tool is any AI tool not on the register — regardless of how reputable the vendor is. ChatGPT on a personal account is unapproved. Claude on a browser tab is unapproved. Gemini through a personal Google account is unapproved. "It's Microsoft, so it must be fine" does not apply — a personal-account Copilot is unapproved even though a tenanted 3sHealth Copilot is approved.
+
+The difference is not the vendor. It is whether the tool has been evaluated against 3sHealth's privacy and security requirements, and whether it operates inside a controlled tenant or outside of one.
+
+### 1.4.6 Shadow AI
+
+Shadow AI — the use of unapproved AI tools for work purposes, usually with good intentions and time pressure — is called out specifically in AUP Section 12. It is a policy violation in its own right, regardless of whether any data was actually exposed. The reason: once Shadow AI is in a workflow, the organization has no visibility into what went in, what came back, whose data was processed, or where.
+
+If you observe Shadow AI — a colleague pasting a vendor contract into an unapproved tool, an analyst using a personal ChatGPT account to summarize a procurement document — you are expected to report it. Module 1.5 covers how. Reporting is not snitching; it is how the organization catches exposure before it becomes a breach.
+
+### 1.4.7 Tenant boundaries and data residency
+
+Two technical ideas are worth a few minutes because they come up constantly in AI conversations.
+
+#### Tenant boundary
+
+A tenant is the slice of a cloud service that belongs to your organization. The 3sHealth Microsoft 365 tenant is distinct from your neighbour's personal Microsoft account, even though both are "Microsoft." Within a tenant-scoped AI tool — M365 Copilot signed in with your 3sHealth work account — the AI can see content you can see, and does not expose that content outside the tenant. Sign in with a personal account, and you are outside the tenant; the same prompt may go to a different model hosted on different infrastructure with different terms. The boundary is real, and it is enforced by sign-in context, not by vendor reputation.
+
+#### Data residency
+
+Data residency is the question of where, geographically, data is stored and processed. Canadian public-sector and health-sector rules generally favour Canadian or at-minimum non-commercial-US processing for certain classifications. The register specifies residency for each approved tool. When a tool is not on the register, the residency is unknown, which is another reason unapproved tools are prohibited for anything above Public.
+
+### 1.4.8 Activity: "Can you enter this?"
+
+For each scenario, decide whether the data can be entered into the AI tool given. Answers are in the table following.
+
+- You paste a published 3sHealth job posting into an unapproved public web version of ChatGPT to rewrite it for clarity.
+- You use tenanted M365 Copilot in Outlook to draft a polite follow-up to a vendor whose RFP response you have already received. The vendor name and contract type are in your prompt.
+- You copy an employee's EFAP case summary into tenanted Copilot in Word to rewrite it in plain language for a managerial overview.
+- You ask Copilot to summarize a 60-page draft policy document that is marked Internal, working in the 3sHealth tenant.
+- You paste a short section of PL/SQL — which contains a database connection string — into an unapproved AI coding assistant to ask for a refactor.
+Answer key
+
+| # | Decision | Why |
+| --- | --- | --- |
+| 1 | Prohibited | The content is Public, but the tool is unapproved. Using unapproved tools is Shadow AI. Use the approved alternative. |
+| 2 | Permitted with caution | Tool is approved and tenanted. Data classification is Internal. Acceptable. Avoid including anything that drifts into Confidential. |
+| 3 | Prohibited | EFAP case data is PHI. Prohibited in any AI tool unless explicit consent is obtained and documented, per AUP Section 4 and HIPA. |
+| 4 | Permitted | Approved tool, appropriate classification. Standard use. |
+| 5 | Prohibited — twice | Unapproved tool AND the data includes a credential, which is restricted under AUP Table 2. This is Shadow AI plus a credentials exposure. |
+
+
+### 1.4.9 Module summary
+
+- Four laws frame AI use at 3sHealth: FOIP, LA FOIP, HIPA, and PIPEDA. HIPA is the most relevant because PHI is the most restricted category.
+- The AUP classifies data as Public, Internal, Confidential/PHI/PII, or Restricted. Each class has a different rule for AI use.
+- Approved means on the AMS Approved AI Tool Register for the specific classification and at your Tier. Nothing else counts.
+- Shadow AI — using unapproved tools — is a policy violation in itself.
+- Tenant boundary matters. A tenanted Copilot is different from a personal Copilot even though the product has the same name.
+- The golden rule: when in doubt, do not enter. Ask your manager or the Privacy Officer.

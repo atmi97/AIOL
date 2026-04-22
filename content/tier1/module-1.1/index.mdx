@@ -1,0 +1,122 @@
+---
+id: module-1.1
+moduleNumber: "1.1"
+title: "What Is AI?"
+tierId: tier1
+order: 1
+estMinutes: 30
+objectives:
+  - "Define artificial intelligence, machine learning, and generative AI in plain language"
+  - "Distinguish what AI is from what traditional software is"
+  - "Identify common AI applications in everyday life and in AMS-managed systems"
+  - "Describe what AI is not — its limits as a tool"
+---
+
+# Module 1.1 — What Is AI?
+
+### 1.1.1 AI in plain language
+
+Artificial intelligence is not magic, and it is not science fiction. In the context of the work you do every day at 3sHealth, a useful working definition is this: AI is software that learns patterns from data and uses those patterns to make predictions or generate content.
+
+Traditional software follows rules that a developer wrote. A payroll calculation engine adds up hours and applies a rate because someone explicitly coded that formula. The rules are visible, reviewable, and fixed. If you give the same input twice, you get the same output twice.
+
+AI is different. Instead of being programmed with explicit rules for every situation, an AI system is given large amounts of example data and learns statistical patterns from those examples. When you ask it a new question, it uses those patterns to produce an answer that is similar to answers it has seen before. That difference — learning patterns instead of following fixed rules — is the source of both AI's power and its risk.
+
+**Key message<br />AI learns patterns from data. It does not reason the way humans reason, and it does not understand meaning the way humans understand meaning. It predicts what is likely to come next based on what came before in its training data.**
+
+### 1.1.2 Three types of AI you will encounter
+
+Not all AI works the same way. Three categories cover almost everything AMS staff will see in day-to-day work.
+
+#### Rule-based systems
+
+These are the oldest and simplest. A developer writes explicit rules — "if the email contains the word lottery and comes from an unknown sender, route it to spam" — and the software applies them. These are often called "AI" for marketing reasons, but they do not learn. Most legacy business rules engines, including many validations in Oracle Fusion, fall into this category. Rule-based systems are deterministic. They behave the same way every time.
+
+#### Machine learning
+
+Machine learning systems are trained on examples. They learn a model — a mathematical representation of patterns — from historical data, and apply that model to new inputs. Examples you already use: the autocomplete in your email client, the fraud detection on your credit card, the suggested replies in Microsoft Teams, the ticket-routing predictions in ServiceNow. Machine learning is usually narrow: a model trained to detect fraudulent transactions cannot compose a performance review.
+
+#### Generative AI
+
+Generative AI is the category that has driven the current wave of attention and change. Tools like Microsoft 365 Copilot, ChatGPT, Claude, and GitHub Copilot fall into this bucket. These systems generate new content — text, code, images, summaries — based on a prompt. Underneath, they are large language models trained on massive amounts of text, and they work by predicting, one token at a time, the most likely next piece of content given what has come before.
+
+Generative AI is what the AI Operator Licence Program is primarily concerned with, because it is the category most likely to come into contact with 3sHealth data, generate outputs that get sent to stakeholders, and produce confident-sounding content that is, occasionally, wrong.
+
+**A simple mental model<br />Think of generative AI as an extraordinarily well-read colleague who has never actually worked at 3sHealth, does not have access to our systems by default, speaks with confidence whether or not they know the answer, and cannot remember anything you tell them after the conversation ends. That colleague can draft, summarize, and ideate faster than anyone. They still need a 3sHealth staff member to review everything they produce.**
+
+### 1.1.3 AI you already use
+
+AI has been part of your daily tools for years. Spam filtering, predictive search, turn-by-turn navigation, auto-capitalization, photo tagging on your phone, Netflix recommendations, and the search ranking in the 3sHealth SharePoint intranet all use some form of AI. The shift with generative AI is not that AI is new, but that it is suddenly very visible, very capable of producing finished-looking content, and very easy to misuse.
+
+### 1.1.4 AI in AMS-managed systems
+
+Across the platforms AMS supports, AI is either live, rolling out, or actively being planned. The following table shows the current picture. Treat this as a snapshot — the specific features change quickly, and the authoritative source is the approved tool register maintained by the AI Steering Committee.
+
+| Platform | AI features you will encounter |
+| --- | --- |
+| Oracle Fusion (ERP/HCM/SCM/EPM) | AI agents in the 26A and 26B releases for finance, procurement, and HCM. AI-assisted reporting and analytics. Natural-language queries against Fusion data. |
+| Microsoft 365 | Copilot in Word, Excel, PowerPoint, Outlook, and Teams. Meeting recap and action-item extraction. AI search across your tenant. Agents built on Copilot Studio. |
+| ServiceNow | Virtual Agent for self-service. AI-assisted ticket routing and categorization. Now Assist for knowledge search and ticket summarization. Predictive Intelligence for incident grouping. |
+| BI tooling | Natural-language question answering on dashboards. AI-assisted data prep and visualization suggestions. |
+| Application development | AI coding assistants used by developers on the AMS dev team — Claude Code, GitHub Copilot, GPT-based tools, Codex. Tier 2 Track D covers these in depth. |
+
+
+### 1.1.5 What AI is not
+
+An equally important part of AI literacy is knowing what AI is not. The following points are boundaries that will come up in every module of this program.
+
+#### AI is not sentient or conscious
+
+It has no experience, no beliefs, no intent. When an AI assistant says "I think" or "I believe", that is fluent language generation, not an inner view. Treating AI output as the opinion of a thinking agent leads people to trust it more than they should.
+
+#### AI is not infallible
+
+It is wrong, sometimes subtly and confidently wrong, more often than most people expect. Module 1.3 covers the failure modes — hallucinations, bias, errors — in detail. The short version: every AI output requires human verification before it is acted on or sent to a stakeholder.
+
+#### AI is not a replacement for human judgment
+
+It is an assistant. It can speed up drafting, summarization, analysis, and ideation. It cannot take accountability for the outcome. Under 3sHealth's AI Acceptable Use Policy (AUP) and its governing AI Policy under the AIGC, the person who uses AI is accountable for what AI produced on their behalf.
+
+#### AI is not a confidential workspace by default
+
+Some AI tools are approved and operate within a protected 3sHealth tenant. Others are public services that may use your prompts to improve their models. The difference matters enormously and is covered in Module 1.4.
+
+**Guardrail — never confuse fluency with accuracy<br />An AI output that is well-written, confidently worded, and perfectly formatted can still be factually wrong. Polished presentation is not evidence of correctness. Always verify before acting.**
+
+### 1.1.6 Activity: "Is This AI?"
+
+For each of the following features from AMS-managed systems, decide: rule-based automation, machine learning, generative AI, or none of the above (i.e., traditional deterministic software). Answers and explanations follow.
+
+- A ServiceNow workflow that automatically assigns all tickets with the word "payroll" in the subject to the Payroll team.
+- Microsoft Outlook's suggested reply feature, which proposes three short responses based on the incoming email.
+- A Copilot request in Word asking for a plain-language summary of a 40-page policy document.
+- Excel's SUM formula totalling a column of values.
+- Oracle Fusion Recruiting flagging a candidate as a potential match for a posted job based on resume text.
+- ServiceNow Virtual Agent answering the question "how do I reset my 3sHealth network password?" with conversational text.
+- A Power BI dashboard that refreshes every morning at 6:00 a.m.
+- Claude Code suggesting a refactor of a PL/SQL stored procedure.
+- Outlook's red-squiggle spelling check.
+- A Teams meeting recap that pulls out action items, owners, and decisions.
+Answer key
+
+| # | Type | Why |
+| --- | --- | --- |
+| 1 | Rule-based | A simple keyword-matching rule configured in ServiceNow. No learning involved. |
+| 2 | Machine learning / generative | Suggested replies use a language model trained on massive amounts of email text. This is the generative side of machine learning. |
+| 3 | Generative AI | Copilot produces new summary text based on the document. Classic generative AI. |
+| 4 | Not AI | SUM is a fixed formula. It does the same thing every time. |
+| 5 | Machine learning | The match is a learned ranking model applied to resume text. Not generative — no new content is created, but patterns from past hiring data are used. |
+| 6 | Generative AI | Virtual Agent uses a language model to produce a conversational response. Note: answer quality depends on the knowledge base it is connected to. |
+| 7 | Not AI | A scheduled refresh is automation, not intelligence. |
+| 8 | Generative AI | A coding assistant that produces new code is generative AI. Tier 2 Track D covers how to use these safely. |
+| 9 | Rule-based (with ML enhancement) | The underlying spell check is dictionary-based. Grammar suggestions in newer Office versions add a machine learning layer. |
+| 10 | Generative AI | Meeting recap uses a language model to identify and rephrase key points from the transcript. |
+
+
+### 1.1.7 Module summary
+
+- AI is software that learns patterns from data to make predictions or generate content. It is not programmed rule by rule.
+- The three categories you will encounter are rule-based systems, machine learning, and generative AI. The AI Operator Licence Program is most concerned with generative AI.
+- AI is already woven into the platforms AMS supports. Oracle Fusion 26A/26B, Microsoft 365 Copilot, and ServiceNow are the three main surfaces.
+- AI is not sentient, not infallible, not a substitute for human judgment, and not a confidential workspace by default.
+- Fluency is not accuracy. Polished output can still be wrong. Always verify.

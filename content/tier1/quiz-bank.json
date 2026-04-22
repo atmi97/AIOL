@@ -1,0 +1,2165 @@
+{
+  "quizzes": [
+    {
+      "id": "t1-final",
+      "tierId": "tier1",
+      "title": "Tier 1 Final Assessment",
+      "description": "20 randomized multiple-choice questions drawn from a bank of 60. 80% pass (16 of 20). 3 attempts. 30-minute time limit.",
+      "passThreshold": 0.8,
+      "maxAttempts": 3,
+      "timeLimitMinutes": 30,
+      "questionsPerAttempt": 20,
+      "shuffle": true,
+      "shuffleOptions": true,
+      "moduleDistribution": {
+        "1.1": 4,
+        "1.2": 3,
+        "1.3": 5,
+        "1.4": 5,
+        "1.5": 3
+      },
+      "questions": [
+        {
+          "id": "T1-1.1-Q01",
+          "module": "1.1",
+          "moduleRef": "module-1.1",
+          "lo": "a",
+          "difficulty": "Easy",
+          "tags": [
+            "definition",
+            "fundamentals"
+          ],
+          "type": "single",
+          "prompt": "Which of the following is the best plain-language definition of artificial intelligence as used in this program?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Software that has been programmed with a complete set of rules covering every scenario it will encounter."
+            },
+            {
+              "id": "b",
+              "text": "Software that learns patterns from data and uses those patterns to make predictions or generate content."
+            },
+            {
+              "id": "c",
+              "text": "Software that has achieved a form of consciousness and can reason about the world."
+            },
+            {
+              "id": "d",
+              "text": "Software that can only process numerical data and cannot work with text or images."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "AI learns patterns from data rather than following hand-coded rules for every scenario (A). It is not conscious or sentient (C), and modern AI works with many data types including text and images (D)."
+        },
+        {
+          "id": "T1-1.1-Q02",
+          "module": "1.1",
+          "moduleRef": "module-1.1",
+          "lo": "b",
+          "difficulty": "Easy",
+          "tags": [
+            "fundamentals",
+            "rule-based",
+            "ServiceNow"
+          ],
+          "type": "single",
+          "prompt": "A ServiceNow workflow automatically routes every ticket with the word \"payroll\" in the subject to the Payroll team. Is this AI?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yes — any automation is AI."
+            },
+            {
+              "id": "b",
+              "text": "Yes — it uses generative AI to understand the subject line."
+            },
+            {
+              "id": "c",
+              "text": "No — it is a rule-based automation. No learning from data is involved."
+            },
+            {
+              "id": "d",
+              "text": "No — only tools with visible chat interfaces are AI."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "A simple keyword-matching rule is deterministic automation. It does not learn from data. Not all automation is AI (A), no language model is involved (B), and chat interface is not what defines AI (D)."
+        },
+        {
+          "id": "T1-1.1-Q03",
+          "module": "1.1",
+          "moduleRef": "module-1.1",
+          "lo": "a",
+          "difficulty": "Easy",
+          "tags": [
+            "definition",
+            "generative AI"
+          ],
+          "type": "single",
+          "prompt": "Which of the following best describes generative AI specifically?",
+          "options": [
+            {
+              "id": "a",
+              "text": "AI that only classifies inputs into fixed categories such as spam or not-spam."
+            },
+            {
+              "id": "b",
+              "text": "AI that generates new content — such as text, code, or images — based on patterns learned from training data."
+            },
+            {
+              "id": "c",
+              "text": "AI that has been formally certified by the AI Steering Committee."
+            },
+            {
+              "id": "d",
+              "text": "AI that runs entirely on a local machine without any cloud component."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Generative AI produces new content. Classifiers (A) are a different category. Governance status (C) and deployment location (D) are separate considerations."
+        },
+        {
+          "id": "T1-1.1-Q04",
+          "module": "1.1",
+          "moduleRef": "module-1.1",
+          "lo": "c",
+          "difficulty": "Easy",
+          "tags": [
+            "AMS platforms",
+            "landscape"
+          ],
+          "type": "single",
+          "prompt": "Which statement about AI in AMS-managed platforms is most accurate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "AI is a future possibility that AMS will consider sometime after 2028."
+            },
+            {
+              "id": "b",
+              "text": "AI is being embedded across Oracle Fusion, Microsoft 365, and ServiceNow on overlapping timelines."
+            },
+            {
+              "id": "c",
+              "text": "AI is only relevant to the Application Development track; business users will not encounter it."
+            },
+            {
+              "id": "d",
+              "text": "AI at AMS is limited to ServiceNow Virtual Agent and nothing else."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "AI features are live or rolling out across Oracle Fusion (26A/26B), M365 Copilot, and ServiceNow AI in parallel. This is the reason the program exists now."
+        },
+        {
+          "id": "T1-1.1-Q05",
+          "module": "1.1",
+          "moduleRef": "module-1.1",
+          "lo": "d",
+          "difficulty": "Medium",
+          "tags": [
+            "fundamentals",
+            "verification",
+            "hallucination"
+          ],
+          "type": "single",
+          "prompt": "A Copilot-drafted memo is well-written, confidently worded, and perfectly formatted. Based on Tier 1 content, what can you conclude about its factual accuracy?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The memo is accurate because Copilot is an approved tool."
+            },
+            {
+              "id": "b",
+              "text": "The memo is accurate because polished formatting is a reliable signal of correctness."
+            },
+            {
+              "id": "c",
+              "text": "Nothing — fluency and correctness are independent. The memo still requires human verification."
+            },
+            {
+              "id": "d",
+              "text": "The memo is likely inaccurate because Copilot is designed to produce misleading content."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "A central Tier 1 message: fluency is not accuracy. Polished output can be wrong. Approval status (A) and formatting (B) do not indicate factual correctness. Copilot is not designed to mislead (D) — it is simply not a truth-verification system."
+        },
+        {
+          "id": "T1-1.1-Q06",
+          "module": "1.1",
+          "moduleRef": "module-1.1",
+          "lo": "a",
+          "difficulty": "Medium",
+          "tags": [
+            "machine learning",
+            "categorization"
+          ],
+          "type": "single",
+          "prompt": "Which of the following is most accurately described as machine learning rather than generative AI or rule-based automation?",
+          "options": [
+            {
+              "id": "a",
+              "text": "An Excel SUM formula totalling a column of values."
+            },
+            {
+              "id": "b",
+              "text": "A Copilot request to draft a plain-language summary of a 40-page policy."
+            },
+            {
+              "id": "c",
+              "text": "Oracle Fusion Recruiting ranking candidates based on learned patterns in resume text and historical hiring data."
+            },
+            {
+              "id": "d",
+              "text": "A scheduled Power BI dashboard refresh every morning at 6:00 a.m."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Ranking candidates by learned patterns in historical data is machine learning. SUM (A) and scheduled refresh (D) are not AI. Copilot summarization (B) is generative AI."
+        },
+        {
+          "id": "T1-1.1-Q07",
+          "module": "1.1",
+          "moduleRef": "module-1.1",
+          "lo": "d",
+          "difficulty": "Medium",
+          "tags": [
+            "fundamentals",
+            "vendor claims",
+            "skepticism"
+          ],
+          "type": "single",
+          "prompt": "A vendor's AI tool claims it \"reasons just like a human expert.\" Based on this program, how should you interpret that claim?",
+          "options": [
+            {
+              "id": "a",
+              "text": "At face value — modern AI can reason as humans do."
+            },
+            {
+              "id": "b",
+              "text": "With skepticism — AI does not reason the way humans reason; it predicts based on statistical patterns."
+            },
+            {
+              "id": "c",
+              "text": "As automatically disqualifying — any AI that claims reasoning is fraudulent."
+            },
+            {
+              "id": "d",
+              "text": "As a technical term meaning the tool uses rules only."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "AI predicts statistically; it does not reason with understanding. Marketing language frequently conflates fluency with reasoning — Tier 1 asks you to recognize that and stay skeptical without assuming the vendor is dishonest (C)."
+        },
+        {
+          "id": "T1-1.1-Q08",
+          "module": "1.1",
+          "moduleRef": "module-1.1",
+          "lo": "b",
+          "difficulty": "Easy",
+          "tags": [
+            "definition",
+            "AI vs traditional"
+          ],
+          "type": "single",
+          "prompt": "What is the fundamental difference between traditional software and AI as the program defines it?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Traditional software is older; AI is newer."
+            },
+            {
+              "id": "b",
+              "text": "Traditional software follows rules a developer wrote; AI learns patterns from example data."
+            },
+            {
+              "id": "c",
+              "text": "Traditional software runs on premises; AI always runs in the cloud."
+            },
+            {
+              "id": "d",
+              "text": "Traditional software requires a user interface; AI does not."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "The distinction is the source of behaviour — hand-coded rules versus learned patterns. Age (A), deployment location (C), and interface (D) are not definitional."
+        },
+        {
+          "id": "T1-1.1-Q09",
+          "module": "1.1",
+          "moduleRef": "module-1.1",
+          "lo": "d",
+          "difficulty": "Easy",
+          "tags": [
+            "accountability",
+            "AUP"
+          ],
+          "type": "single",
+          "prompt": "Under the 3sHealth AUP and its governing AI Policy, who is accountable for the content of an AI-assisted output that is sent to a stakeholder?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The AI tool vendor."
+            },
+            {
+              "id": "b",
+              "text": "The AI Steering Committee that approved the tool."
+            },
+            {
+              "id": "c",
+              "text": "The 3sHealth staff member who used the tool."
+            },
+            {
+              "id": "d",
+              "text": "Nobody, because AI-generated content is not attributable."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Human accountability is a core program principle: \"Human verify, Human decide, Human accountable.\" Accountability is not transferable to the vendor (A), the approval body (B), or absent (D)."
+        },
+        {
+          "id": "T1-1.1-Q10",
+          "module": "1.1",
+          "moduleRef": "module-1.1",
+          "lo": "c",
+          "difficulty": "Easy",
+          "tags": [
+            "generative AI",
+            "M365",
+            "examples"
+          ],
+          "type": "single",
+          "prompt": "A Teams meeting recap produced by M365 Copilot lists action items and decisions. Which category of AI best describes this feature?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Rule-based automation — it is just keyword matching."
+            },
+            {
+              "id": "b",
+              "text": "Generative AI — it produces new summary text based on the meeting transcript."
+            },
+            {
+              "id": "c",
+              "text": "Not AI — it is a scheduled export."
+            },
+            {
+              "id": "d",
+              "text": "A hybrid of Oracle Fusion and ServiceNow."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Copilot meeting recap generates new summary text from the transcript. It is a generative AI application, not rule-based (A) or a scheduled export (D)."
+        },
+        {
+          "id": "T1-1.1-Q11",
+          "module": "1.1",
+          "moduleRef": "module-1.1",
+          "lo": "d",
+          "difficulty": "Medium",
+          "tags": [
+            "what AI is not",
+            "judgment"
+          ],
+          "type": "single",
+          "prompt": "Which of the following is NOT an accurate statement about what AI is?",
+          "options": [
+            {
+              "id": "a",
+              "text": "AI is a tool that can speed up drafting, summarization, and analysis."
+            },
+            {
+              "id": "b",
+              "text": "AI is a substitute for human judgment on decisions involving 3sHealth staff and clients."
+            },
+            {
+              "id": "c",
+              "text": "AI is already embedded in platforms AMS manages."
+            },
+            {
+              "id": "d",
+              "text": "AI is not conscious and does not have intent."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "AI assists — it does not substitute for human judgment. The other three statements are all accurate characterizations under the program."
+        },
+        {
+          "id": "T1-1.1-Q12",
+          "module": "1.1",
+          "moduleRef": "module-1.1",
+          "lo": "c",
+          "difficulty": "Easy",
+          "tags": [
+            "generative AI",
+            "development",
+            "Claude Code"
+          ],
+          "type": "single",
+          "prompt": "A developer says, \"I used Claude Code to generate this PL/SQL refactor.\" Which category of AI is Claude Code?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Rule-based automation."
+            },
+            {
+              "id": "b",
+              "text": "A scheduled job."
+            },
+            {
+              "id": "c",
+              "text": "Generative AI (a coding assistant)."
+            },
+            {
+              "id": "d",
+              "text": "A ServiceNow workflow."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Coding assistants that produce new code are generative AI. Tier 2 Track D covers how AMS developers use these tools safely."
+        },
+        {
+          "id": "T1-1.2-Q01",
+          "module": "1.2",
+          "moduleRef": "module-1.2",
+          "lo": "a",
+          "difficulty": "Easy",
+          "tags": [
+            "approved tools",
+            "register"
+          ],
+          "type": "single",
+          "prompt": "Where is the authoritative list of AI tools approved for use at AMS maintained?",
+          "options": [
+            {
+              "id": "a",
+              "text": "On individual team SharePoint sites, updated by each team lead."
+            },
+            {
+              "id": "b",
+              "text": "In the AMS Approved AI Tool Register, maintained by the AI Steering Committee."
+            },
+            {
+              "id": "c",
+              "text": "In vendor product documentation."
+            },
+            {
+              "id": "d",
+              "text": "In the AUP itself, as a fixed appendix."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "The Approved AI Tool Register is the single source of truth, maintained by the AI Steering Committee. Team sites (A), vendor docs (C), and the AUP itself (D) are not authoritative."
+        },
+        {
+          "id": "T1-1.2-Q02",
+          "module": "1.2",
+          "moduleRef": "module-1.2",
+          "lo": "b",
+          "difficulty": "Easy",
+          "tags": [
+            "licence model",
+            "rationale"
+          ],
+          "type": "single",
+          "prompt": "Which is the best rationale for the \"operator licence\" metaphor used in this program?",
+          "options": [
+            {
+              "id": "a",
+              "text": "To make the training sound more impressive to regulators."
+            },
+            {
+              "id": "b",
+              "text": "To communicate that AI use requires training and comes with real consequences if used badly — like driving."
+            },
+            {
+              "id": "c",
+              "text": "To indicate that only certified mechanics can use AI."
+            },
+            {
+              "id": "d",
+              "text": "To mirror the structure of Saskatchewan's driver licensing regulations word-for-word."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "The metaphor communicates that AI is useful, common, consequential when used badly, and requires training — not expertise. The program is intentionally practical, not regulatory mimicry (D)."
+        },
+        {
+          "id": "T1-1.2-Q03",
+          "module": "1.2",
+          "moduleRef": "module-1.2",
+          "lo": "c",
+          "difficulty": "Medium",
+          "tags": [
+            "Shadow AI",
+            "approved tools",
+            "process"
+          ],
+          "type": "single",
+          "prompt": "You need to summarize a 10-page vendor proposal quickly. The AI tool you want to use is not on the approved register. What should you do?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Use the tool once — it is a one-time use and will not be noticed."
+            },
+            {
+              "id": "b",
+              "text": "Use a personal account for the same tool so it is clearly off 3sHealth's systems."
+            },
+            {
+              "id": "c",
+              "text": "Raise the need with your manager and check whether an approved tool covers the use case."
+            },
+            {
+              "id": "d",
+              "text": "Ask a colleague to use the unapproved tool on your behalf."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Tools off the register are unapproved regardless of convenience. Raising the need is the legitimate path. Options A, B, and D are all Shadow AI and policy violations under AUP Section 12."
+        },
+        {
+          "id": "T1-1.2-Q04",
+          "module": "1.2",
+          "moduleRef": "module-1.2",
+          "lo": "b",
+          "difficulty": "Easy",
+          "tags": [
+            "tier model",
+            "access"
+          ],
+          "type": "single",
+          "prompt": "Which of the following is true about Tier 1 access to AI tools?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Tier 1 unlocks full access to all approved AI tools in the AMS environment."
+            },
+            {
+              "id": "b",
+              "text": "Tier 1 unlocks access to Microsoft 365 Copilot only."
+            },
+            {
+              "id": "c",
+              "text": "Tier 1 is awareness-only and does not grant access to AI tools; tool access begins at Tier 2."
+            },
+            {
+              "id": "d",
+              "text": "Tier 1 is only required for managers, not for individual contributors."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Tier 1 is the awareness tier — a prerequisite for everything else, but with no tool access. Tool access begins at Tier 2 with role-specific approved tools."
+        },
+        {
+          "id": "T1-1.2-Q05",
+          "module": "1.2",
+          "moduleRef": "module-1.2",
+          "lo": "a",
+          "difficulty": "Medium",
+          "tags": [
+            "governance",
+            "AIGC",
+            "AUP"
+          ],
+          "type": "single",
+          "prompt": "Which governance body is responsible for the broader AI Policy under which the 3sHealth AUP operates as a child policy?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The AMS Application Services Management team."
+            },
+            {
+              "id": "b",
+              "text": "The AI Governance Committee (AIGC)."
+            },
+            {
+              "id": "c",
+              "text": "The Saskatchewan Information and Privacy Commissioner."
+            },
+            {
+              "id": "d",
+              "text": "The federal Office of the Privacy Commissioner of Canada."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "AIGC is the overarching governance body. The AMS team operates the program (A); OIPC Sask (C) is the privacy regulator; and the federal commissioner (D) handles PIPEDA matters — separate roles."
+        },
+        {
+          "id": "T1-1.2-Q06",
+          "module": "1.2",
+          "moduleRef": "module-1.2",
+          "lo": "c",
+          "difficulty": "Medium",
+          "tags": [
+            "equivalency",
+            "prerequisite",
+            "tier 1"
+          ],
+          "type": "single",
+          "prompt": "A staff member holds an external Google AI Essentials certification. What does the program require of them before they can access 3sHealth AI tools?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Nothing — the external certification covers all tiers."
+            },
+            {
+              "id": "b",
+              "text": "They must complete Tier 1 for 3sHealth-specific content, then may apply for Tier 2 equivalency."
+            },
+            {
+              "id": "c",
+              "text": "They must re-do the full Tier 1, Tier 2, Tier 3, and Tier 4 program from scratch."
+            },
+            {
+              "id": "d",
+              "text": "They must retake the external certification through 3sHealth."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "External AI certifications may support Tier 2 equivalency, but Tier 1 — which covers 3sHealth-specific AUP, Saskatchewan privacy law, AMS platforms, and incident reporting — is mandatory for everyone."
+        },
+        {
+          "id": "T1-1.2-Q07",
+          "module": "1.2",
+          "moduleRef": "module-1.2",
+          "lo": "c",
+          "difficulty": "Medium",
+          "tags": [
+            "responsibility",
+            "AUP"
+          ],
+          "type": "single",
+          "prompt": "Which of the following best describes your personal responsibility under the AUP?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Your responsibility ends when the AI tool has been approved by the Steering Committee."
+            },
+            {
+              "id": "b",
+              "text": "You are personally responsible for safe, lawful, ethical, and policy-compliant use of AI."
+            },
+            {
+              "id": "c",
+              "text": "The vendor is responsible for how you use their AI tool."
+            },
+            {
+              "id": "d",
+              "text": "Responsibility belongs to the manager who assigned the task."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Per AUP Section 11.5, every AMS team member is personally responsible for safe, lawful, ethical, and policy-compliant AI use. Approval of a tool (A) does not remove your responsibility in how you use it. The vendor (C) and the manager (D) do not absorb your accountability."
+        },
+        {
+          "id": "T1-1.2-Q08",
+          "module": "1.2",
+          "moduleRef": "module-1.2",
+          "lo": "b",
+          "difficulty": "Medium",
+          "tags": [
+            "Oracle Fusion",
+            "platform roadmap"
+          ],
+          "type": "single",
+          "prompt": "Which is a coming AI feature specifically in Oracle Fusion 26A/26B that this program highlights?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A ServiceNow Virtual Agent for password resets."
+            },
+            {
+              "id": "b",
+              "text": "AI agents in finance, procurement, and HCM."
+            },
+            {
+              "id": "c",
+              "text": "M365 Copilot for Outlook drafts."
+            },
+            {
+              "id": "d",
+              "text": "Claude Code for PL/SQL refactoring."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Oracle Fusion 26A/26B ships AI agents for finance, procurement, and HCM. Virtual Agent (A) is ServiceNow, Copilot (C) is M365, and Claude Code (D) is a developer tool for the Tier 2 Track D cohort."
+        },
+        {
+          "id": "T1-1.3-Q01",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "a",
+          "difficulty": "Easy",
+          "tags": [
+            "hallucination",
+            "definition"
+          ],
+          "type": "single",
+          "prompt": "What is an AI \"hallucination\"?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A rare technical fault that only occurs when the server is overloaded."
+            },
+            {
+              "id": "b",
+              "text": "AI-generated content that is presented confidently, sounds plausible, and is factually wrong."
+            },
+            {
+              "id": "c",
+              "text": "A deliberately malicious output by an AI designed to mislead."
+            },
+            {
+              "id": "d",
+              "text": "Any AI output that contains spelling errors."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Hallucinations are plausible-sounding, confident outputs that are factually wrong. They are not malicious (C) or tied to spelling (D) or server load (A) — they are a property of how generative models produce fluent text."
+        },
+        {
+          "id": "T1-1.3-Q02",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "a",
+          "difficulty": "Medium",
+          "tags": [
+            "hallucination",
+            "mechanism"
+          ],
+          "type": "single",
+          "prompt": "Why do generative AI models hallucinate?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Because they are deliberately trained to lie under certain conditions."
+            },
+            {
+              "id": "b",
+              "text": "Because they have no separate mechanism for \"I don't know\" and default to producing fluent output even when uncertain."
+            },
+            {
+              "id": "c",
+              "text": "Because their servers are too small to store real facts."
+            },
+            {
+              "id": "d",
+              "text": "Because they are tested only on the questions their developers expect."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Generative models produce fluent output as their default — uncertainty is not a mode the model signals. This is a property of the training, not deception (A) or a capacity limitation (C)."
+        },
+        {
+          "id": "T1-1.3-Q03",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "a",
+          "difficulty": "Medium",
+          "tags": [
+            "hallucination",
+            "policy citation",
+            "example"
+          ],
+          "type": "single",
+          "prompt": "Which of the following is an example of a hallucination in an AMS context?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A Copilot draft that references Section 7.4 of the 3sHealth Payroll Handbook, where Section 7.4 does not exist."
+            },
+            {
+              "id": "b",
+              "text": "A Copilot draft with a typo in an employee's name."
+            },
+            {
+              "id": "c",
+              "text": "A Copilot draft that is marked as confidential when it should be marked internal."
+            },
+            {
+              "id": "d",
+              "text": "A Copilot draft that is shorter than requested."
+            }
+          ],
+          "correct": [
+            "a"
+          ],
+          "rationale": "Inventing a plausible but non-existent citation is a classic hallucination. Typos (B), classification errors (C), and length issues (D) are different kinds of problems."
+        },
+        {
+          "id": "T1-1.3-Q04",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "b",
+          "difficulty": "Medium",
+          "tags": [
+            "bias",
+            "definition",
+            "distinction"
+          ],
+          "type": "single",
+          "prompt": "What is AI bias, as distinct from hallucination?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Bias is another word for hallucination; they are the same phenomenon."
+            },
+            {
+              "id": "b",
+              "text": "Bias is systematic skew in AI outputs reflecting skew in training data, whereas hallucination is invented specifics."
+            },
+            {
+              "id": "c",
+              "text": "Bias only occurs in AI tools built outside Canada."
+            },
+            {
+              "id": "d",
+              "text": "Bias is a feature that can be turned off in tool settings."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Bias and hallucination are distinct. Bias is patterned skew from training data; hallucination is fabricated specifics. Bias is not region-specific (C) and cannot simply be toggled off (D)."
+        },
+        {
+          "id": "T1-1.3-Q05",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "b",
+          "difficulty": "Medium",
+          "tags": [
+            "bias",
+            "procurement",
+            "Indigenous supplier"
+          ],
+          "type": "single",
+          "prompt": "Which of the following is a plausible bias risk in an admin AI use case at AMS?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A vendor scoring model trained on past contracts reinforcing incumbency at the expense of newer suppliers, including Indigenous-owned businesses."
+            },
+            {
+              "id": "b",
+              "text": "A spell checker correcting common typos."
+            },
+            {
+              "id": "c",
+              "text": "An Outlook rule moving newsletters to a folder."
+            },
+            {
+              "id": "d",
+              "text": "A scheduled Oracle Fusion batch job running at 2:00 a.m."
+            }
+          ],
+          "correct": [
+            "a"
+          ],
+          "rationale": "Vendor scoring based on historical patterns can reproduce past patterns — and disadvantage newer or Indigenous-owned suppliers 3sHealth is committed to engaging. The other options are not bias scenarios."
+        },
+        {
+          "id": "T1-1.3-Q06",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "b",
+          "difficulty": "Medium",
+          "tags": [
+            "bias",
+            "HR",
+            "performance review"
+          ],
+          "type": "single",
+          "prompt": "An AI tool drafts performance reviews. It consistently uses more hedging language in reviews for women than for men, even though the underlying performance ratings are similar. This is an example of:",
+          "options": [
+            {
+              "id": "a",
+              "text": "A hallucination."
+            },
+            {
+              "id": "b",
+              "text": "A context-window limit."
+            },
+            {
+              "id": "c",
+              "text": "Bias."
+            },
+            {
+              "id": "d",
+              "text": "Data residency."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Systematic linguistic skew across demographic groups is bias — the model is reflecting patterns in training data. It is not hallucination (A), context limits (B), or data residency (D)."
+        },
+        {
+          "id": "T1-1.3-Q07",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "c",
+          "difficulty": "Medium",
+          "tags": [
+            "errors",
+            "arithmetic",
+            "payroll"
+          ],
+          "type": "single",
+          "prompt": "Why should you be cautious about relying on AI to perform arithmetic in a payroll or financial context?",
+          "options": [
+            {
+              "id": "a",
+              "text": "AI always refuses to perform arithmetic."
+            },
+            {
+              "id": "b",
+              "text": "Generative AI is inconsistent at arithmetic and \"the AI did the math\" is not a sufficient audit explanation."
+            },
+            {
+              "id": "c",
+              "text": "Arithmetic is forbidden by the AUP."
+            },
+            {
+              "id": "d",
+              "text": "AI only performs arithmetic in imperial units, which 3sHealth does not use."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Generative models are notoriously inconsistent at arithmetic, and AI is never a sufficient audit explanation for a payroll or invoice calculation. Options A, C, and D are incorrect."
+        },
+        {
+          "id": "T1-1.3-Q08",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "d",
+          "difficulty": "Easy",
+          "tags": [
+            "verification",
+            "habit",
+            "core message"
+          ],
+          "type": "single",
+          "prompt": "The single habit this program asks every Tier 1 learner to build is:",
+          "options": [
+            {
+              "id": "a",
+              "text": "Avoid using AI in any work situation."
+            },
+            {
+              "id": "b",
+              "text": "Trust AI outputs fully, because they are produced by approved tools."
+            },
+            {
+              "id": "c",
+              "text": "Verify every AI output before acting on it or sending it."
+            },
+            {
+              "id": "d",
+              "text": "Always rewrite AI outputs from scratch before use."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Verification is the core Tier 1 habit. Avoidance (A) is not the program's stance; blind trust (B) is the opposite of what is taught; rewriting from scratch (D) defeats the purpose of AI assistance."
+        },
+        {
+          "id": "T1-1.3-Q09",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "a",
+          "difficulty": "Medium",
+          "tags": [
+            "hallucination",
+            "verification",
+            "citation"
+          ],
+          "type": "single",
+          "prompt": "A Copilot response includes a citation to a Board Resolution that your team cannot locate in the minutes. What is the most appropriate next step?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Trust the citation and include it in the document; Copilot is reliable."
+            },
+            {
+              "id": "b",
+              "text": "Treat the citation as a likely hallucination and verify against the authoritative minute record before using it."
+            },
+            {
+              "id": "c",
+              "text": "Rephrase the citation to something more generic and include it without verification."
+            },
+            {
+              "id": "d",
+              "text": "Ask Copilot if it is sure, and trust its answer."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Unverifiable citations are a classic hallucination pattern. Verify against the authoritative source. Asking the same model (D) is not verification — it will often confirm itself confidently either way."
+        },
+        {
+          "id": "T1-1.3-Q10",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "c",
+          "difficulty": "Medium",
+          "tags": [
+            "staleness",
+            "training cutoff",
+            "limitations"
+          ],
+          "type": "single",
+          "prompt": "\"Staleness\" in AI output refers to:",
+          "options": [
+            {
+              "id": "a",
+              "text": "Output that has been stored on disk for too long."
+            },
+            {
+              "id": "b",
+              "text": "AI producing answers based on training data that predates recent changes, without signalling the limitation."
+            },
+            {
+              "id": "c",
+              "text": "A tool that crashes after heavy use."
+            },
+            {
+              "id": "d",
+              "text": "AI output that has been left in a draft folder past the deadline."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Staleness means the model's training cutoff precedes the event or regulation in question. The model often produces a plausible answer anyway. The other options describe unrelated phenomena."
+        },
+        {
+          "id": "T1-1.3-Q11",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "c",
+          "difficulty": "Medium",
+          "tags": [
+            "context window",
+            "limits",
+            "summarization"
+          ],
+          "type": "single",
+          "prompt": "You feed a 200-page policy document into an AI tool and ask for a comprehensive summary. The summary looks complete. What is the most important concern to keep in mind?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Summaries are always accurate; nothing to worry about."
+            },
+            {
+              "id": "b",
+              "text": "The tool's context window may not have held the entire document, so content from the middle may have been silently dropped."
+            },
+            {
+              "id": "c",
+              "text": "Long documents cannot be summarized by AI at all."
+            },
+            {
+              "id": "d",
+              "text": "Only manual summaries are permitted by the AUP."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Context window limits are finite. When documents exceed them, content is often quietly dropped and the resulting summary still appears complete. Options A, C, and D are incorrect or too absolute."
+        },
+        {
+          "id": "T1-1.3-Q12",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "a",
+          "difficulty": "Easy",
+          "tags": [
+            "confidence problem",
+            "uncertainty"
+          ],
+          "type": "single",
+          "prompt": "\"The AI will flag it if it's not sure.\" Is this a safe assumption under this program?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yes — modern AI tools clearly flag uncertain outputs."
+            },
+            {
+              "id": "b",
+              "text": "No — AI does not reliably signal its own uncertainty; confident tone is evidence of nothing."
+            },
+            {
+              "id": "c",
+              "text": "Yes, but only for approved tools."
+            },
+            {
+              "id": "d",
+              "text": "No — AI outputs are always flagged as uncertain by default."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "A core Tier 1 message: AI uses the same confident tone for correct and fabricated output. Do not rely on the tool to flag its own uncertainty."
+        },
+        {
+          "id": "T1-1.3-Q13",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "b",
+          "difficulty": "Hard",
+          "tags": [
+            "bias",
+            "historical data",
+            "service desk"
+          ],
+          "type": "single",
+          "prompt": "A service desk routing model was trained on past ticket-handling data. In the past, tickets submitted in French were often mis-routed and delayed. What risk does training a new AI router on this data carry?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The new router will be unusually fast on French tickets."
+            },
+            {
+              "id": "b",
+              "text": "The new router may automate the historical mishandling and systematically de-prioritize French-language tickets."
+            },
+            {
+              "id": "c",
+              "text": "The new router will refuse to process French tickets."
+            },
+            {
+              "id": "d",
+              "text": "The new router will translate all tickets into English."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "A bias-from-history risk: the model will learn and reproduce the pattern unless the training data or model is explicitly corrected. Options A, C, and D are not the risk this scenario describes."
+        },
+        {
+          "id": "T1-1.3-Q14",
+          "module": "1.3",
+          "moduleRef": "module-1.3",
+          "lo": "d",
+          "difficulty": "Medium",
+          "tags": [
+            "verification",
+            "habit",
+            "three questions"
+          ],
+          "type": "single",
+          "prompt": "Which of the following is the best three-question verification check to apply to an AI output before using it?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Is it long enough? Is it well-formatted? Does it sound confident?"
+            },
+            {
+              "id": "b",
+              "text": "Where did this come from? Does it match what I can verify in the authoritative system? If I disagree with one detail, does the rest hold up?"
+            },
+            {
+              "id": "c",
+              "text": "Did the AI run quickly? Did it produce output in under a minute? Was there a loading spinner?"
+            },
+            {
+              "id": "d",
+              "text": "Is the AI tool approved? Is it tenanted? Is it inside Canada?"
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "The three verification questions from the module focus on source, cross-check, and integrity. Formatting-based checks (A) are the trap the module is warning against. Performance questions (C) are irrelevant. Approval/tenant (D) matter but are not the content-verification check."
+        },
+        {
+          "id": "T1-1.4-Q01",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "a",
+          "difficulty": "Easy",
+          "tags": [
+            "HIPA",
+            "legislation"
+          ],
+          "type": "single",
+          "prompt": "Which Saskatchewan Act governs personal health information held by trustees such as the SHA and 3sHealth (when acting as an information management service provider)?",
+          "options": [
+            {
+              "id": "a",
+              "text": "FOIP (Freedom of Information and Protection of Privacy Act)."
+            },
+            {
+              "id": "b",
+              "text": "LA FOIP (Local Authority Freedom of Information and Protection of Privacy Act)."
+            },
+            {
+              "id": "c",
+              "text": "HIPA (Health Information Protection Act)."
+            },
+            {
+              "id": "d",
+              "text": "PIPEDA (Personal Information Protection and Electronic Documents Act)."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "HIPA governs personal health information in Saskatchewan, held by trustees. FOIP (A) is for provincial government institutions, LA FOIP (B) for local authorities more generally, and PIPEDA (D) is federal and applies to commercial activity."
+        },
+        {
+          "id": "T1-1.4-Q02",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "a",
+          "difficulty": "Medium",
+          "tags": [
+            "legislation",
+            "pairing"
+          ],
+          "type": "single",
+          "prompt": "Which of the following is the correct pairing of legislation with its primary subject?",
+          "options": [
+            {
+              "id": "a",
+              "text": "FOIP — personal health information in hospitals."
+            },
+            {
+              "id": "b",
+              "text": "LA FOIP — federal data residency across Canadian provinces."
+            },
+            {
+              "id": "c",
+              "text": "HIPA — personal health information held by trustees in Saskatchewan."
+            },
+            {
+              "id": "d",
+              "text": "PIPEDA — Saskatchewan local authorities only."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "HIPA is specifically for personal health information held by trustees in Saskatchewan. FOIP and LA FOIP are broader privacy laws for provincial and local authorities respectively; PIPEDA is federal commercial activity."
+        },
+        {
+          "id": "T1-1.4-Q03",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "b",
+          "difficulty": "Easy",
+          "tags": [
+            "classification",
+            "public"
+          ],
+          "type": "single",
+          "prompt": "Under the AUP data classification, which classification applies to a published 3sHealth press release that is already on the 3shealth.ca website?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Public."
+            },
+            {
+              "id": "b",
+              "text": "Internal."
+            },
+            {
+              "id": "c",
+              "text": "Confidential / PHI / PII."
+            },
+            {
+              "id": "d",
+              "text": "Restricted."
+            }
+          ],
+          "correct": [
+            "a"
+          ],
+          "rationale": "Published content on the public website is Public. It can be used in any approved AI tool. Internal applies to unpublished organizational content; Confidential covers personal data; Restricted covers credentials and legal hold material."
+        },
+        {
+          "id": "T1-1.4-Q04",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "b",
+          "difficulty": "Hard",
+          "tags": [
+            "PHI",
+            "EFAP",
+            "classification",
+            "consent"
+          ],
+          "type": "single",
+          "prompt": "You want to summarize an employee's EFAP (Employee and Family Assistance Program) case notes using an approved, tenanted AI tool. Can you do this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yes — any approved tool accepts any data classification."
+            },
+            {
+              "id": "b",
+              "text": "No — EFAP case notes are PHI. PHI must not be processed in AI tools unless explicit consent has been obtained and documented, per the AUP and HIPA."
+            },
+            {
+              "id": "c",
+              "text": "Yes, if you rewrite the name as \"Employee X\" in your prompt."
+            },
+            {
+              "id": "d",
+              "text": "Yes, if you use only the first three sentences of the case notes."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "EFAP notes are PHI. The AUP is explicit: PHI must not be processed in AI tools unless explicit, documented consent exists. Simple pseudonymization like (C) is not proper de-identification; partial inclusion (D) does not change the classification."
+        },
+        {
+          "id": "T1-1.4-Q05",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "c",
+          "difficulty": "Medium",
+          "tags": [
+            "Shadow AI",
+            "unapproved",
+            "contract"
+          ],
+          "type": "single",
+          "prompt": "A colleague pastes a vendor contract into the public web version of ChatGPT from their personal account to speed up a review. How does the program classify this action?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Acceptable, because ChatGPT is reputable."
+            },
+            {
+              "id": "b",
+              "text": "Acceptable, because the colleague used a personal account and not 3sHealth's."
+            },
+            {
+              "id": "c",
+              "text": "Shadow AI — use of an unapproved tool for 3sHealth work, a policy violation under AUP Section 12."
+            },
+            {
+              "id": "d",
+              "text": "Acceptable, because it was for speed and the contract is internal."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Using a personal-account or unapproved tool for 3sHealth work is Shadow AI, regardless of the vendor's reputation (A), the account ownership (B), or time pressure (D). It is a policy violation in itself, even before any data exposure is assessed."
+        },
+        {
+          "id": "T1-1.4-Q06",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "c",
+          "difficulty": "Medium",
+          "tags": [
+            "approved",
+            "definition",
+            "register"
+          ],
+          "type": "single",
+          "prompt": "What does \"approved\" mean in this program?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The vendor is a reputable global brand."
+            },
+            {
+              "id": "b",
+              "text": "The tool appears on the AMS Approved AI Tool Register, for the specific classification in use, and at the Tier level held by the user."
+            },
+            {
+              "id": "c",
+              "text": "The tool was recommended by a trusted colleague."
+            },
+            {
+              "id": "d",
+              "text": "The tool has a SOC 2 Type II report."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "\"Approved\" is specific: on the register, for the classification, at the user's Tier. Reputation (A), colleague recommendation (C), and vendor security certifications (D) are not sufficient on their own."
+        },
+        {
+          "id": "T1-1.4-Q07",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "b",
+          "difficulty": "Hard",
+          "tags": [
+            "tenant boundary",
+            "Copilot",
+            "approved"
+          ],
+          "type": "single",
+          "prompt": "Microsoft 365 Copilot is approved for 3sHealth staff use within the 3sHealth M365 tenant. You sign in to Copilot from a personal Microsoft account on the same laptop to summarize an internal document. Is this acceptable?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yes — Copilot is approved, so any sign-in context is fine."
+            },
+            {
+              "id": "b",
+              "text": "No — the tenant boundary is what makes tenanted Copilot approved. A personal-account Copilot is a different context and is unapproved."
+            },
+            {
+              "id": "c",
+              "text": "Yes, if the document is short."
+            },
+            {
+              "id": "d",
+              "text": "Yes, if you delete the personal-account history afterwards."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "The approval attaches to the tenanted Copilot experience, signed in with a 3sHealth account. Personal-account Copilot is outside the tenant and is unapproved. Neither document length (C) nor retroactive cleanup (D) changes this."
+        },
+        {
+          "id": "T1-1.4-Q08",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "d",
+          "difficulty": "Easy",
+          "tags": [
+            "PII",
+            "SIN",
+            "prohibited"
+          ],
+          "type": "single",
+          "prompt": "Which of the following data types is explicitly prohibited from AI tool inputs under AUP Table 2?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A published 3sHealth job posting."
+            },
+            {
+              "id": "b",
+              "text": "A Social Insurance Number (SIN)."
+            },
+            {
+              "id": "c",
+              "text": "A team's public mission statement."
+            },
+            {
+              "id": "d",
+              "text": "The name of a public-facing service line."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "SIN is PII and is explicitly prohibited. Published content (A), public mission statements (C), and service-line names (D) are Public."
+        },
+        {
+          "id": "T1-1.4-Q09",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "d",
+          "difficulty": "Medium",
+          "tags": [
+            "scenario",
+            "approved",
+            "internal"
+          ],
+          "type": "single",
+          "prompt": "You are drafting a polite email to a vendor using tenanted M365 Copilot. Your draft mentions the vendor's name, the general subject of the contract, and a meeting date. What is the appropriate decision?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Prohibited — any vendor data is Restricted."
+            },
+            {
+              "id": "b",
+              "text": "Prohibited — mentioning a meeting date makes it PHI."
+            },
+            {
+              "id": "c",
+              "text": "Permitted with caution — the tool is approved and tenanted; the data is Internal. Avoid drifting into Confidential content."
+            },
+            {
+              "id": "d",
+              "text": "Prohibited — only the Privacy Officer can draft vendor emails."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Approved tenanted tool plus Internal-classification data is within the AUP. Caution: keep it from drifting into Confidential (such as specific financial terms or employee names). Options A, B, and D misclassify the data or invent rules that do not exist."
+        },
+        {
+          "id": "T1-1.4-Q10",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "d",
+          "difficulty": "Hard",
+          "tags": [
+            "Shadow AI",
+            "credentials",
+            "restricted",
+            "code"
+          ],
+          "type": "single",
+          "prompt": "You find short PL/SQL code that includes an embedded database connection string. You are considering pasting it into an unapproved AI coding assistant for a quick refactor. What is the appropriate action?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Proceed — code is always internal."
+            },
+            {
+              "id": "b",
+              "text": "Proceed — unapproved tools are fine for short snippets."
+            },
+            {
+              "id": "c",
+              "text": "Prohibited — the tool is unapproved AND the code includes a credential, which is Restricted under AUP Table 2. Do not enter."
+            },
+            {
+              "id": "d",
+              "text": "Proceed, but rename the connection string first."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Two violations: unapproved tool (Shadow AI) and credential inclusion (Restricted prohibited). Neither snippet size (B) nor renaming (D) fixes either violation."
+        },
+        {
+          "id": "T1-1.4-Q11",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "b",
+          "difficulty": "Medium",
+          "tags": [
+            "PHI",
+            "de-identification"
+          ],
+          "type": "single",
+          "prompt": "\"De-identification\" in the context of PHI and AI means:",
+          "options": [
+            {
+              "id": "a",
+              "text": "Removing the employee's first name only."
+            },
+            {
+              "id": "b",
+              "text": "Removing or transforming information so the data can no longer reasonably identify the individual."
+            },
+            {
+              "id": "c",
+              "text": "Using a pseudonym such as \"Employee X\" with the original context preserved."
+            },
+            {
+              "id": "d",
+              "text": "Storing the data in a folder marked \"de-identified.\""
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Proper de-identification means the data can no longer reasonably identify the person. Partial name removal (A) or cosmetic pseudonymization (C) is insufficient when context (role, team, timing) still identifies the individual. A folder label (D) is not de-identification."
+        },
+        {
+          "id": "T1-1.4-Q12",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "a",
+          "difficulty": "Hard",
+          "tags": [
+            "PIPEDA",
+            "Saskatchewan",
+            "commercial"
+          ],
+          "type": "single",
+          "prompt": "Saskatchewan does not have private-sector privacy legislation that is \"substantially similar\" to PIPEDA. What is the practical implication for 3sHealth?",
+          "options": [
+            {
+              "id": "a",
+              "text": "PIPEDA applies to personal information used in commercial activities in Saskatchewan."
+            },
+            {
+              "id": "b",
+              "text": "Only FOIP applies; PIPEDA is irrelevant."
+            },
+            {
+              "id": "c",
+              "text": "Personal information in commercial activity has no legal protection in Saskatchewan."
+            },
+            {
+              "id": "d",
+              "text": "HIPA replaces PIPEDA for all purposes."
+            }
+          ],
+          "correct": [
+            "a"
+          ],
+          "rationale": "Because Saskatchewan has no substantially similar private-sector law, PIPEDA applies federally to commercial activity in the province. This is relevant for parts of 3sHealth's work involving commercial activity."
+        },
+        {
+          "id": "T1-1.4-Q13",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "c",
+          "difficulty": "Medium",
+          "tags": [
+            "restricted",
+            "AUP",
+            "review"
+          ],
+          "type": "single",
+          "prompt": "Which of the following best describes the current AUP position on restricted data and AI tools?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Restricted data can be used in any approved AI tool at Tier 2 or above."
+            },
+            {
+              "id": "b",
+              "text": "Restricted data can be used in any AI tool if the user is a manager."
+            },
+            {
+              "id": "c",
+              "text": "Restricted data must not be processed in any AI tool; the classification is under review by the AI Steering Committee for agentic and local model scenarios."
+            },
+            {
+              "id": "d",
+              "text": "Restricted data is a renamed synonym for Public data."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Current AUP: restricted data must not be processed in any AI tool. The Steering Committee is reviewing the classification for agentic and local-model scenarios, but until that review concludes, the rule stands."
+        },
+        {
+          "id": "T1-1.4-Q14",
+          "module": "1.4",
+          "moduleRef": "module-1.4",
+          "lo": "d",
+          "difficulty": "Easy",
+          "tags": [
+            "golden rule",
+            "classification",
+            "escalation"
+          ],
+          "type": "single",
+          "prompt": "You are unsure whether a piece of data is Confidential or Internal. The AI tool you want to use is approved for Internal but not Confidential. What is the most appropriate next step?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Use the tool anyway; the risk is probably low."
+            },
+            {
+              "id": "b",
+              "text": "Treat the data as Internal since you hope it is."
+            },
+            {
+              "id": "c",
+              "text": "Do not enter the data. Ask your manager or the Privacy Officer to confirm the classification."
+            },
+            {
+              "id": "d",
+              "text": "Use a different unapproved tool in the meantime."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "The Tier 1 golden rule: when in doubt, do not enter. Ask. Classification errors that treat Confidential as Internal are a common source of breach incidents."
+        },
+        {
+          "id": "T1-1.5-Q01",
+          "module": "1.5",
+          "moduleRef": "module-1.5",
+          "lo": "a",
+          "difficulty": "Easy",
+          "tags": [
+            "human-bookend",
+            "accountability"
+          ],
+          "type": "single",
+          "prompt": "The human-bookend model says that every AI-assisted task follows what structure?",
+          "options": [
+            {
+              "id": "a",
+              "text": "AI start, human middle, AI end."
+            },
+            {
+              "id": "b",
+              "text": "Human start, AI middle, human end."
+            },
+            {
+              "id": "c",
+              "text": "AI start, AI middle, AI end."
+            },
+            {
+              "id": "d",
+              "text": "Human at every step; AI is only consulted."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "A person defines the task and prompts (start), the AI executes (middle), and a person verifies and takes accountability for the output (end). This applies to every AI-assisted task regardless of length or complexity."
+        },
+        {
+          "id": "T1-1.5-Q02",
+          "module": "1.5",
+          "moduleRef": "module-1.5",
+          "lo": "a",
+          "difficulty": "Easy",
+          "tags": [
+            "philosophy",
+            "accountability"
+          ],
+          "type": "single",
+          "prompt": "The core philosophy of the program is:",
+          "options": [
+            {
+              "id": "a",
+              "text": "AI decide, AI verify, AI accountable."
+            },
+            {
+              "id": "b",
+              "text": "Human verify, Human decide, Human accountable."
+            },
+            {
+              "id": "c",
+              "text": "Vendor decides, vendor verifies, vendor accountable."
+            },
+            {
+              "id": "d",
+              "text": "Manager decides, AI verifies, manager accountable."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "\"Human verify, Human decide, Human accountable\" is the core philosophy stated throughout the program."
+        },
+        {
+          "id": "T1-1.5-Q03",
+          "module": "1.5",
+          "moduleRef": "module-1.5",
+          "lo": "b",
+          "difficulty": "Medium",
+          "tags": [
+            "reporting",
+            "incident",
+            "example"
+          ],
+          "type": "single",
+          "prompt": "Which of the following should be reported through the ServiceNow AI Incident Category?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A minor typo in an AI-drafted email that has not been sent."
+            },
+            {
+              "id": "b",
+              "text": "A Copilot output that invented a vendor contract clause which was then sent to the vendor."
+            },
+            {
+              "id": "c",
+              "text": "An approved AI tool taking slightly longer to respond than usual."
+            },
+            {
+              "id": "d",
+              "text": "A colleague using an approved tool within their Tier level."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "An AI-fabricated contract clause that reached a stakeholder is a material output error that should be reported. Typos not yet sent (A), minor latency (C), and properly-authorized use (D) are not incidents."
+        },
+        {
+          "id": "T1-1.5-Q04",
+          "module": "1.5",
+          "moduleRef": "module-1.5",
+          "lo": "b",
+          "difficulty": "Medium",
+          "tags": [
+            "near-miss",
+            "reporting",
+            "culture"
+          ],
+          "type": "single",
+          "prompt": "You catch an AI error BEFORE it reaches a stakeholder. Should you report it?",
+          "options": [
+            {
+              "id": "a",
+              "text": "No — near-misses are not worth reporting."
+            },
+            {
+              "id": "b",
+              "text": "No — reporting is only for breaches."
+            },
+            {
+              "id": "c",
+              "text": "Yes — near-misses are reportable. The pattern matters, and near-miss reporting improves training and spots systemic issues."
+            },
+            {
+              "id": "d",
+              "text": "Only if a manager specifically asks."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Near-miss reporting is explicitly encouraged. The goal is a learning culture that catches exposure before it becomes a breach."
+        },
+        {
+          "id": "T1-1.5-Q05",
+          "module": "1.5",
+          "moduleRef": "module-1.5",
+          "lo": "c",
+          "difficulty": "Medium",
+          "tags": [
+            "ServiceNow",
+            "reporting",
+            "PHI handling"
+          ],
+          "type": "single",
+          "prompt": "When filing an AI incident in ServiceNow, what should you NOT include in the ticket?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A description of what happened in plain language."
+            },
+            {
+              "id": "b",
+              "text": "The classification of the data involved."
+            },
+            {
+              "id": "c",
+              "text": "The actual PHI or credentials that were part of the incident."
+            },
+            {
+              "id": "d",
+              "text": "The name of the AI tool used."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Never paste PHI or credentials into the ticket itself; ticket systems are not a safe place for sensitive data. Reference the data by classification and location instead. The other elements are appropriate."
+        },
+        {
+          "id": "T1-1.5-Q06",
+          "module": "1.5",
+          "moduleRef": "module-1.5",
+          "lo": "d",
+          "difficulty": "Medium",
+          "tags": [
+            "escalation",
+            "AUP"
+          ],
+          "type": "single",
+          "prompt": "Per the AUP, what is the standard escalation path for AI incidents at AMS?",
+          "options": [
+            {
+              "id": "a",
+              "text": "You → AIGC → IT Security → Manager."
+            },
+            {
+              "id": "b",
+              "text": "You → Manager → IT Security / ESS → AIGC."
+            },
+            {
+              "id": "c",
+              "text": "You → Vendor → AIGC."
+            },
+            {
+              "id": "d",
+              "text": "You → Privacy Commissioner directly."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Standard escalation: reporter → manager → IT Security/ESS → AIGC. Direct escalation to the Privacy Commissioner (D) is not the standard path. Vendors (C) are not in the escalation chain."
+        },
+        {
+          "id": "T1-1.5-Q07",
+          "module": "1.5",
+          "moduleRef": "module-1.5",
+          "lo": "b",
+          "difficulty": "Medium",
+          "tags": [
+            "Shadow AI",
+            "reporting",
+            "colleague"
+          ],
+          "type": "single",
+          "prompt": "You observe a colleague using an unapproved AI tool for work. What is the expected response?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Ignore it; it is not your responsibility."
+            },
+            {
+              "id": "b",
+              "text": "Report it through the ServiceNow AI Incident Category. Shadow AI is a reportable category."
+            },
+            {
+              "id": "c",
+              "text": "Use the same unapproved tool yourself so there is consistency on the team."
+            },
+            {
+              "id": "d",
+              "text": "Alert the vendor of the unapproved tool."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Observed Shadow AI is reportable. The goal is to catch exposure before it becomes a breach — not to punish the individual. Ignoring it (A) or participating (C) compounds the risk."
+        },
+        {
+          "id": "T1-1.5-Q08",
+          "module": "1.5",
+          "moduleRef": "module-1.5",
+          "lo": "b",
+          "difficulty": "Medium",
+          "tags": [
+            "bias",
+            "reporting",
+            "category"
+          ],
+          "type": "single",
+          "prompt": "An AI tool's output shows systematic skew in a way that could disadvantage a demographic group. Even if no decision has been made on the output, should this be reported?",
+          "options": [
+            {
+              "id": "a",
+              "text": "No — only outputs that have been acted on matter."
+            },
+            {
+              "id": "b",
+              "text": "Yes — bias observations are a reportable category. The pattern matters."
+            },
+            {
+              "id": "c",
+              "text": "Only if the output has been shared externally."
+            },
+            {
+              "id": "d",
+              "text": "Only if the manager directly asks."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Bias observations are a reportable incident category. The pattern matters even when no specific decision has been made yet."
+        },
+        {
+          "id": "T1-1.5-Q09",
+          "module": "1.5",
+          "moduleRef": "module-1.5",
+          "lo": "a",
+          "difficulty": "Easy",
+          "tags": [
+            "accountability",
+            "sender"
+          ],
+          "type": "single",
+          "prompt": "Who is ultimately accountable for the content of an AI-assisted output that a 3sHealth staff member sends to a stakeholder?",
+          "options": [
+            {
+              "id": "a",
+              "text": "The 3sHealth staff member who sent it."
+            },
+            {
+              "id": "b",
+              "text": "The AI vendor."
+            },
+            {
+              "id": "c",
+              "text": "The AI Steering Committee."
+            },
+            {
+              "id": "d",
+              "text": "The AIGC."
+            }
+          ],
+          "correct": [
+            "a"
+          ],
+          "rationale": "\"If you send it, you own it.\" Accountability stays with the staff member; it is not transferable to the vendor, the approval body, or the governance body."
+        },
+        {
+          "id": "T1-1.5-Q10",
+          "module": "1.5",
+          "moduleRef": "module-1.5",
+          "lo": "d",
+          "difficulty": "Medium",
+          "tags": [
+            "urgent",
+            "escalation",
+            "parallel"
+          ],
+          "type": "single",
+          "prompt": "For an urgent data-exposure event — for example, PHI pasted into an unapproved public tool — what is the expected escalation approach?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Wait for the weekly ServiceNow queue review."
+            },
+            {
+              "id": "b",
+              "text": "Delay until the exposure has been fully investigated before reporting anything."
+            },
+            {
+              "id": "c",
+              "text": "Report via ServiceNow and escalate to your manager and IT Security in parallel, immediately."
+            },
+            {
+              "id": "d",
+              "text": "Report only to the vendor."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "Urgent data-exposure events escalate in parallel, not serially. Do not delay for investigation — investigate after reporting. The other options all increase exposure time."
+        },
+        {
+          "id": "T1-1.5-Q11",
+          "module": "1.5",
+          "moduleRef": "module-1.5",
+          "lo": "c",
+          "difficulty": "Easy",
+          "tags": [
+            "help",
+            "resources",
+            "Privacy Officer"
+          ],
+          "type": "single",
+          "prompt": "Which of the following is the best resource for clarifying whether a specific AI use is permitted for a given data type?",
+          "options": [
+            {
+              "id": "a",
+              "text": "A web search for recent AI news."
+            },
+            {
+              "id": "b",
+              "text": "An online forum of other AMS staff."
+            },
+            {
+              "id": "c",
+              "text": "Your manager or the Privacy Officer, supported by the AMS AI FAQ and the approved tool register."
+            },
+            {
+              "id": "d",
+              "text": "The vendor's customer support."
+            }
+          ],
+          "correct": [
+            "c"
+          ],
+          "rationale": "The program's designated help channels are your manager, the Privacy Officer, the FAQ, and the register. Web search (A), external forums (B), and vendor support (D) are not authoritative sources for 3sHealth policy interpretation."
+        },
+        {
+          "id": "T1-1.5-Q12",
+          "module": "1.5",
+          "moduleRef": "module-1.5",
+          "lo": "b",
+          "difficulty": "Hard",
+          "tags": [
+            "scenario",
+            "near-miss",
+            "verification",
+            "walkthrough"
+          ],
+          "type": "single",
+          "prompt": "A team member has just used tenanted M365 Copilot to draft a client-facing report. They notice that one of the key figures in the draft is about 4% off from the authoritative Oracle Fusion source. The draft has not been sent. What is the best first action?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Send the report; a 4% variance is within tolerance."
+            },
+            {
+              "id": "b",
+              "text": "Correct the figure against the authoritative Fusion source and check for similar pattern errors before filing a near-miss ServiceNow ticket."
+            },
+            {
+              "id": "c",
+              "text": "Ignore and resend the draft through a different AI tool."
+            },
+            {
+              "id": "d",
+              "text": "Blame the AI vendor and escalate directly to AIGC."
+            }
+          ],
+          "correct": [
+            "b"
+          ],
+          "rationale": "Correct first, check for related errors second, file a near-miss report third, and loop in the manager. Sending a known wrong figure (A) or using another unapproved tool (C) compounds the problem. Direct escalation to AIGC (D) skips the escalation chain."
+        }
+      ]
+    }
+  ]
+}

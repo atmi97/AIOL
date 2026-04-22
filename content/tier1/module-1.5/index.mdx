@@ -1,0 +1,117 @@
+---
+id: module-1.5
+moduleNumber: "1.5"
+title: "Reporting and Accountability"
+tierId: tier1
+order: 5
+estMinutes: 20
+objectives:
+  - "Apply the human-bookend accountability model to AI-assisted work"
+  - "Recognize when an AI issue should be reported, and the category it falls into"
+  - "Use ServiceNow to report an AI incident through the AI Incident Category"
+  - "Describe the escalation path from reporter to AIGC"
+---
+
+# Module 1.5 — Reporting and Accountability
+
+### 1.5.1 The human accountability model
+
+The AI Operator Licence Program is built around a single sentence: Human verify, Human decide, Human accountable. Every other rule in this program is a specific application of that principle.
+
+In practice, this means you — the 3sHealth staff member — are accountable for what AI produces on your behalf. Accountability is not transferable to the tool, the vendor, the team that approved the tool, or the colleague who suggested you use it. If you send it, you own it.
+
+**The human-bookend model<br />Every AI-assisted task at AMS follows the same structure:<br />1. Human at the start. A person defines the task, chooses the tool, and supplies the prompt with appropriate data.<br />2. AI in the middle. The tool executes — drafts, summarizes, analyzes, proposes, routes.<br />3. Human at the end. A person reviews the output, corrects what needs correcting, and takes accountability for the final version.<br />This applies equally to a five-second Copilot prompt and a multi-hour agentic workflow. The bookends are not optional.**
+
+### 1.5.2 What counts as an AI incident
+
+Not every AI error is an incident worth reporting, but more than you might initially think are. The general test: if the output reached or could have reached a person or system outside your own desk, or if there is a data concern, it should be reported. Categories:
+
+#### Output error that reached a stakeholder
+
+An AI-drafted communication, summary, or report that went to an employee, vendor, client, or regulator with a material error in it. "Material" is a judgment call — the bar is much lower for PHI, financial, and legal content than for a typo.
+
+#### Data concern or possible breach
+
+Data that may have been exposed: PHI pasted into an unapproved tool, credentials in a prompt, a leak via copy-paste into an external service, or a tool behaving in a way that suggests your inputs are being retained beyond what the AUP allows.
+
+#### Bias detected in output
+
+An AI output that reflects systematic skew — in hiring language, vendor scoring, performance review phrasing, service desk routing. Worth reporting even if no decision was made on the biased output; the pattern matters.
+
+#### Observed Shadow AI
+
+A colleague using an unapproved AI tool for 3sHealth work. Report it. The report goes to the process, not the person; the system is designed to catch exposure before it becomes a breach.
+
+#### Tool behaviour that suggests a security incident
+
+An approved tool behaving unexpectedly: unusual access requests, unexpected data being surfaced, prompts that trigger behaviour that looks like it bypasses guardrails. These go through the standard IT Security path with an AI tag.
+
+#### Near-misses
+
+You caught the error before it went out. Still report it. Near-miss reporting is how the organization improves the training, updates the prompt library, and spots patterns. Good-faith reporting is encouraged.
+
+### 1.5.3 How to report
+
+Reports go through ServiceNow, under the AI Incident Category. Tier 2 Module 2.7 walks through the exact ServiceNow screens; for Tier 1, the key information is what to include.
+
+#### What to include in the report
+
+- What happened, in plain language. Two to four sentences is usually enough.
+- Which AI tool was involved. Include whether it was approved, and at what tier/classification.
+- What data was involved, described by classification — e.g., "Internal, no PHI" or "Confidential — employee records for a team of 12" — not the data itself.
+- Whether the output reached anyone outside your immediate work.
+- Any immediate containment steps you have already taken.
+**What not to do<br />Do not paste the problematic data into the incident ticket. The ticket system is not a safe place for PHI or credentials. Reference the data by classification and location.<br />Do not delay reporting while you investigate. Report first, investigate second. The incident team can help with the investigation.**
+
+### 1.5.4 Escalation path
+
+Per AUP Section 7.6, the escalation structure is:
+
+| Step | Who | When |
+| --- | --- | --- |
+| 1 | You → Your manager | Immediately for anything material. Your manager has context on the task and the stakeholder relationship. |
+| 2 | Manager → IT Security / Enterprise Shared Services (ESS) | For data concerns, potential breach, credentials exposure, or tool misbehaviour. |
+| 3 | ESS → AIGC (AI Governance Committee) | For anything that rises to policy, pattern, or cross-organizational concern. |
+
+
+For urgent data-exposure events — PHI in an unapproved tool, credentials in a public prompt — escalate immediately and in parallel. Do not wait for ServiceNow routing.
+
+### 1.5.5 Where to get help
+
+- AMS AI FAQ — maintained on the 3sHealth intranet, updated as new platforms and tools roll out.
+- Your AI Champion — once Tier 3 cohorts are certified, each AMS team will have a designated Champion.
+- Your manager — for uncertainty about whether a specific use is permitted.
+- The Privacy Officer — for questions about HIPA, LA FOIP, FOIP, or PIPEDA applicability.
+- ServiceNow — for incident reporting, the AI help desk once it is stood up, and general IT support.
+### 1.5.6 A note on culture
+
+This program does not treat AI incidents as failures to be punished. It treats them as signals that help the organization learn. The reason is practical: a workforce that is afraid to report will under-report, the patterns will be invisible, and the incidents that do surface will be the severe ones that could not be hidden. That is the opposite of what a functioning safety culture looks like. Good-faith reporting is encouraged and protected.
+
+The human accountability framework for AI-assisted work — including how AI-assisted outputs are attributed in the employment record, and the corrective action framework for repeat non-compliance — is being developed in partnership with HR and will be communicated when the partnership work concludes. In the meantime, the AUP applies as written, reporting is encouraged, and the focus is on surfacing risk quickly.
+
+### 1.5.7 Activity: Scenario walkthrough
+
+Scenario: It is 3:45 p.m. on a Thursday. You are finalizing the quarterly service line performance report for one of 3sHealth's client organizations. You used tenanted M365 Copilot to draft the financial summary section. You have just noticed that the revenue figure Copilot drafted — which matches the magnitude of the real figure — is about 4% off the source Fusion report. The draft has not been sent. The client has a standing Friday 10:00 a.m. review call to discuss it.
+
+Walk through the reporting process. What do you do in the next 15 minutes? The next two hours? By tomorrow morning? Answer prompts follow.
+
+Walkthrough — next 15 minutes
+
+- Correct the figure in the draft from the Fusion source. The source is authoritative; Copilot was wrong.
+- Check the rest of the summary for similar pattern-level errors — if one number is 4% off, others might be too.
+- Document what you caught: which tool, which section, what the error was, what the correct value was.
+Walkthrough — next two hours
+
+- File a ServiceNow AI incident under the AI Incident Category. Near-miss classification. Include: tool (tenanted M365 Copilot in Word), classification (Internal — Confidential adjacency, no PHI), nature of error (fabricated figure, plausible magnitude), and that it was caught pre-send.
+- Notify your manager. They may want to review the final draft before it goes out.
+Walkthrough — by tomorrow morning
+
+- Final review with a second pair of eyes for the client-facing version. Not required by policy, but good practice given the catch.
+- Keep a note in your working file. The ServiceNow ticket is the official record; your working note is for your own quality.
+### 1.5.8 Module summary
+
+- Human verify, Human decide, Human accountable. You own what AI produces on your behalf.
+- The human-bookend model applies to every AI-assisted task: human start, AI middle, human end.
+- Report AI incidents — errors that reached stakeholders, data concerns, bias, Shadow AI, tool misbehaviour, and near-misses — through ServiceNow.
+- Escalation goes manager → IT Security/ESS → AIGC. Urgent data-exposure events escalate in parallel.
+- Good-faith reporting is encouraged and protected. The goal is a learning culture, not a punitive one.
