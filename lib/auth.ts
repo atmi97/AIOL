@@ -74,18 +74,13 @@ if (DEV_LOGIN_ENABLED) {
 export const authConfig: NextAuthConfig = {
   adapter: PrismaAdapter(prisma),
   providers,
-  session: { strategy: "database" },
+  session: { strategy: "jwt" },
   pages: { signIn: "/signin" },
   callbacks: {
     async signIn({ user, account }) {
       if (!user.email) return false;
       const email = user.email.toLowerCase();
-
-      // First-time login via OAuth/email: record + optionally promote admin.
       const existing = await prisma.user.findUnique({ where: { email } });
-      if (!existing && INITIAL_ADMIN && email === INITIAL_ADMIN) {
-        // Let the adapter create the user, then promote in the session callback below.
-      }
       if (account?.provider === "microsoft-entra-id") {
         const oid = (account.providerAccountId as string | undefined) ?? undefined;
         if (oid && existing && !existing.entraOid) {
@@ -94,23 +89,34 @@ export const authConfig: NextAuthConfig = {
       }
       return true;
     },
-    async session({ session, user }) {
-      if (session.user && user) {
-        (session.user as any).id = user.id;
-        const dbUser = await prisma.user.findUnique({ where: { id: user.id } });
-        if (dbUser) {
-          // Auto-promote the configured initial admin on first session.
-          if (
-            INITIAL_ADMIN &&
-            dbUser.email?.toLowerCase() === INITIAL_ADMIN &&
-            dbUser.role !== "ADMIN"
-          ) {
-            await prisma.user.update({ where: { id: dbUser.id }, data: { role: "ADMIN" } });
-            (session.user as any).role = "ADMIN";
-          } else {
-            (session.user as any).role = dbUser.role;
-          }
+    async jwt({ token, user }) {
+      // On initial sign-in `user` is populated; resolve id + role from DB and stash on token.
+      const email = (user?.email ?? token.email ?? "").toLowerCase();
+      if (!email) return token;
+      const dbUser = await prisma.user.findUnique({ where: { email } });
+      if (dbUser) {
+        if (
+          INITIAL_ADMIN &&
+          dbUser.email?.toLowerCase() === INITIAL_ADMIN &&
+          dbUser.role !== "ADMIN"
+        ) {
+          const promoted = await prisma.user.update({
+            where: { id: dbUser.id },
+            data: { role: "ADMIN" },
+          });
+          (token as any).uid = promoted.id;
+          (token as any).role = promoted.role;
+        } else {
+          (token as any).uid = dbUser.id;
+          (token as any).role = dbUser.role;
         }
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (session.user) {
+        (session.user as any).id = (token as any).uid;
+        (session.user as any).role = (token as any).role;
       }
       return session;
     },
