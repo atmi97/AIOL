@@ -1,0 +1,50 @@
+{
+  "name": "AIOL Preview",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "AIOL Preview",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Prisma.prisma",
+        "bradlc.vscode-tailwindcss",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "editor.formatOnSave": false,
+        "tailwindCSS.experimental.classRegex": [
+          ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+        ]
+      }
+    }
+  },
+
+  "remoteEnv": {
+    "DATABASE_URL": "file:./prisma/dev.db",
+    "AUTH_SECRET": "codespace-dev-secret-do-not-use-in-prod-ZG9udC11c2UtbWUtYW55d2hlcmU=",
+    "AUTH_URL": "http://localhost:3000",
+    "ENABLE_DEV_LOGIN": "true",
+    "INITIAL_ADMIN_EMAIL": "atabakmehrabani99@gmail.com",
+    "EMAIL_FROM": "noreply@3shealth.ca"
+  },
+
+  "postCreateCommand": "npm install && npx prisma db push --accept-data-loss && npm run seed",
+
+  "postAttachCommand": {
+    "server": "npm run dev"
+  },
+
+  "waitFor": "postCreateCommand"
+}
