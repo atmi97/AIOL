@@ -140,7 +140,54 @@ export default function PreviewIndex() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6">
+        <div className="mt-8">
+          <div className="text-[11px] font-semibold tracking-wider text-slate-500 uppercase mb-3">
+            Final assessment
+          </div>
+          <Link
+            href="/preview/quiz"
+            className="group block rounded-2xl border border-slate-200 bg-gradient-to-br from-brand-600 to-brand-800 p-6 hover:shadow-xl hover:shadow-brand-600/20 transition text-white"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-[80px_1fr_auto] gap-6 items-start">
+              <div>
+                <div className="w-16 h-16 rounded-xl bg-white/15 backdrop-blur text-white font-bold text-2xl flex items-center justify-center group-hover:scale-105 transition">
+                  ✓
+                </div>
+              </div>
+              <div className="min-w-0">
+                <div className="flex items-baseline gap-3 flex-wrap">
+                  <h2 className="text-xl font-bold">Tier 1 Final Assessment — Demo</h2>
+                  <div className="flex items-center gap-2 text-xs text-brand-100">
+                    <span>10 questions</span>
+                    <span>·</span>
+                    <span>5 min</span>
+                    <span>·</span>
+                    <span>80% pass</span>
+                  </div>
+                </div>
+                <p className="mt-2 text-sm text-brand-50/90">
+                  Real engine: countdown timer, randomized questions and options, auto-submit on expiry, per-question rationale on the result screen.
+                </p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {["Live countdown", "Randomized bank", "Pass/fail scoring", "Question review"].map((it) => (
+                    <span
+                      key={it}
+                      className="px-2.5 py-1 rounded-full bg-white/15 text-white text-[11px] font-medium border border-white/20"
+                    >
+                      {it}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex items-center text-white group-hover:translate-x-1 transition-transform">
+                <span className="text-sm font-medium">Open</span>
+                <span className="ml-1">→</span>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        <div className="mt-8 rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6">
           <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
             For stakeholders
           </div>
