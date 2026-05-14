@@ -11,6 +11,11 @@ export async function POST(
   const session = await auth();
   const userId = session.user.id;
 
+  const mod = await prisma.module.findUnique({ where: { id: slug } });
+  if (!mod) {
+    return new Response(null, { status: 303, headers: { Location: "/tier/tier1" } });
+  }
+
   await prisma.moduleProgress.upsert({
     where: { userId_moduleId: { userId, moduleId: slug } },
     create: { userId, moduleId: slug, completedAt: new Date() },
@@ -18,10 +23,18 @@ export async function POST(
   });
   await recordModuleCompletion(userId, slug);
 
-  // Relative Location so the browser resolves it against the public Codespaces URL
-  // (NextResponse.redirect would use req.url, which contains the internal :3000 port).
+  // Look up the next module in tier order; if last, send back to the tier overview.
+  const siblings = await prisma.module.findMany({
+    where: { tierId: mod.tierId },
+    orderBy: { order: "asc" },
+    select: { id: true },
+  });
+  const idx = siblings.findIndex((m) => m.id === slug);
+  const nextMod = idx >= 0 && idx < siblings.length - 1 ? siblings[idx + 1] : null;
+  const destination = nextMod ? `/module/${nextMod.id}` : `/tier/${mod.tierId}`;
+
   return new Response(null, {
     status: 303,
-    headers: { Location: `/module/${slug}` },
+    headers: { Location: destination },
   });
 }

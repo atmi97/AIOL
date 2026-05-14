@@ -53,17 +53,21 @@ export default async function ModulePage({ params }: { params: Promise<{ slug: s
 
   const { meta, Content } = entry;
 
+  // DB fallbacks ensure objectives / minutes / title always render even if the
+  // module registry happens to have a stale or partially-built entry in dev.
+  const objectives = meta.objectives ?? (JSON.parse(mod.objectivesJson) as string[]);
+
   return (
     <>
       <SiteHeader />
       <ModuleShell
-        moduleNumber={meta.moduleNumber}
-        title={meta.title}
-        minutes={meta.minutes}
-        sectionsCount={meta.sectionsCount}
-        interactiveCount={meta.interactiveCount}
-        objectives={meta.objectives}
-        sections={meta.sections}
+        moduleNumber={meta.moduleNumber ?? mod.moduleNumber}
+        title={meta.title ?? mod.title}
+        minutes={meta.minutes ?? mod.estMinutes}
+        sectionsCount={meta.sectionsCount ?? meta.sections?.length ?? 0}
+        interactiveCount={meta.interactiveCount ?? 0}
+        objectives={objectives}
+        sections={meta.sections ?? []}
         prev={prev ? { href: `/module/${prev.id}`, label: `Module ${prev.moduleNumber} · ${prev.title}` } : undefined}
         next={next ? { href: `/module/${next.id}`, label: `Module ${next.moduleNumber} · ${next.title}` } : undefined}
         completionSlot={
