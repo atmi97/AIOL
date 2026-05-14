@@ -2,12 +2,6 @@
 
 Interactive training platform for **3sHealth AMS AI Operator Licence** — the mandatory certification that every AMS team member must complete before using AI tools on internal data. Tier 1 (Awareness) is fully built out: 5 modules, 60-question assessment bank, progress tracking, and an admin layer. Two more tiers (Practitioner, Champion) and a fourth (Governance) are planned but out of scope for v1.2.
 
-The whole platform is designed around three constraints:
-
-- **Stand it up now, migrate later.** Content lives as MDX + JSON in `/content/**`, so it can be exported to Oracle LMS or any SCORM/xAPI host without rewriting.
-- **Same content, two views.** A stakeholder preview at `/preview/*` and the real learner experience at `/tier/tier1` both render from a shared component library — single source of truth.
-- **Trust the learner, audit the admin.** No quiz cheating (server-validated timer, randomized banks), no silent content edits (every admin save is a `ContentEdit` row with before/after diff).
-
 ---
 
 ## What's in v1.2
