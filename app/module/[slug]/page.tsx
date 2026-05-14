@@ -1,23 +1,9 @@
-import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { recordModuleCompletion, recordModuleView } from "@/lib/xapi";
+import { recordModuleView } from "@/lib/xapi";
 import { SiteHeader } from "@/components/site-header";
 import { ModuleShell } from "@/components/mdx";
 import { MODULE_REGISTRY } from "@/components/mdx/modules";
-
-async function markComplete(moduleId: string, _formData: FormData) {
-  "use server";
-  const session = await auth();
-  const userId = session.user.id;
-  await prisma.moduleProgress.upsert({
-    where: { userId_moduleId: { userId, moduleId } },
-    create: { userId, moduleId, completedAt: new Date() },
-    update: { completedAt: new Date() },
-  });
-  await recordModuleCompletion(userId, moduleId);
-  redirect(`/module/${moduleId}`);
-}
 
 export default async function ModulePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -82,7 +68,8 @@ export default async function ModulePage({ params }: { params: Promise<{ slug: s
         next={next ? { href: `/module/${next.id}`, label: `Module ${next.moduleNumber} · ${next.title}` } : undefined}
         completionSlot={
           <form
-            action={markComplete.bind(null, mod.id)}
+            action={`/api/module/${mod.id}/complete`}
+            method="POST"
             className="flex items-center justify-between gap-4 flex-wrap"
           >
             <div className="text-sm text-slate-600">
