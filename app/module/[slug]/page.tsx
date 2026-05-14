@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { ModuleShell } from "@/components/mdx";
 import { MODULE_REGISTRY } from "@/components/mdx/modules";
 
-async function markComplete(moduleId: string) {
+async function markComplete(moduleId: string, _formData: FormData) {
   "use server";
   const session = await auth();
   const userId = session.user.id;
@@ -82,10 +82,7 @@ export default async function ModulePage({ params }: { params: Promise<{ slug: s
         next={next ? { href: `/module/${next.id}`, label: `Module ${next.moduleNumber} · ${next.title}` } : undefined}
         completionSlot={
           <form
-            action={async () => {
-              "use server";
-              await markComplete(mod.id);
-            }}
+            action={markComplete.bind(null, mod.id)}
             className="flex items-center justify-between gap-4 flex-wrap"
           >
             <div className="text-sm text-slate-600">
