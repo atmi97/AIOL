@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { recordModuleCompletion } from "@/lib/xapi";
@@ -18,5 +18,10 @@ export async function POST(
   });
   await recordModuleCompletion(userId, slug);
 
-  return NextResponse.redirect(new URL(`/module/${slug}`, _req.url), { status: 303 });
+  // Relative Location so the browser resolves it against the public Codespaces URL
+  // (NextResponse.redirect would use req.url, which contains the internal :3000 port).
+  return new Response(null, {
+    status: 303,
+    headers: { Location: `/module/${slug}` },
+  });
 }
