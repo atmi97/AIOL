@@ -3,28 +3,7 @@
 import { Section, KeyMessage, Tag, Tabs, SummaryCards } from "../index";
 import { useState } from "react";
 
-export const META_12 = {
-  moduleNumber: "1.2",
-  title: "AI at AMS",
-  minutes: 20,
-  sectionsCount: 8,
-  interactiveCount: 4,
-  objectives: [
-    "Identify AI tools currently approved or planned within AMS-managed platforms",
-    "Describe the purpose and structure of the AI Operator Licence Program",
-    "Describe your personal role in responsible AI adoption at 3sHealth",
-  ],
-  sections: [
-    { id: "landscape", n: "1.2.1", label: "Current AI landscape" },
-    { id: "whats-coming", n: "1.2.2", label: "What is coming" },
-    { id: "why-licence", n: "1.2.3", label: "Why an operator licence?" },
-    { id: "tiers", n: "1.2.4", label: "The four tiers" },
-    { id: "governance", n: "1.2.5", label: "Governance & AIGC" },
-    { id: "your-role", n: "1.2.6", label: "Your role" },
-    { id: "activity", n: "1.2.7", label: "Activity: AI footprint" },
-    { id: "summary", n: "1.2.8", label: "Summary" },
-  ],
-};
+export { META_12 } from "./meta";
 
 const TIERS = [
   { k: "1", name: "Awareness", audience: "All AMS staff", unlocks: "No tool access. Awareness-only.", renewal: "Annual" },

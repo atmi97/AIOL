@@ -1,18 +1,9 @@
-import { META_11, Content11 } from "./module-1-1";
-import { META_12, Content12 } from "./module-1-2";
-import { META_13, Content13 } from "./module-1-3";
-import { META_14, Content14 } from "./module-1-4";
-import { META_15, Content15 } from "./module-1-5";
-
-export type ModuleMeta = {
-  moduleNumber: string;
-  title: string;
-  minutes: number;
-  sectionsCount: number;
-  interactiveCount: number;
-  objectives: string[];
-  sections: { id: string; n: string; label: string }[];
-};
+import { Content11 } from "./module-1-1";
+import { Content12 } from "./module-1-2";
+import { Content13 } from "./module-1-3";
+import { Content14 } from "./module-1-4";
+import { Content15 } from "./module-1-5";
+import { ALL_META, META_11, META_12, META_13, META_14, META_15, type ModuleMeta } from "./meta";
 
 export type ModuleEntry = {
   meta: ModuleMeta;
@@ -27,5 +18,6 @@ export const MODULE_REGISTRY: Record<string, ModuleEntry> = {
   "module-1.5": { meta: META_15, Content: Content15 },
 };
 
-export { META_11, META_12, META_13, META_14, META_15 };
+export type { ModuleMeta };
+export { ALL_META, META_11, META_12, META_13, META_14, META_15 };
 export { Content11, Content12, Content13, Content14, Content15 };

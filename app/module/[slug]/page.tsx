@@ -4,6 +4,7 @@ import { recordModuleView } from "@/lib/xapi";
 import { SiteHeader } from "@/components/site-header";
 import { ModuleShell } from "@/components/mdx";
 import { MODULE_REGISTRY } from "@/components/mdx/modules";
+import { MarkCompleteButton } from "@/components/mark-complete-button";
 
 export default async function ModulePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -71,31 +72,7 @@ export default async function ModulePage({ params }: { params: Promise<{ slug: s
         prev={prev ? { href: `/module/${prev.id}`, label: `Module ${prev.moduleNumber} · ${prev.title}` } : undefined}
         next={next ? { href: `/module/${next.id}`, label: `Module ${next.moduleNumber} · ${next.title}` } : undefined}
         completionSlot={
-          <form
-            action={`/api/module/${mod.id}/complete`}
-            method="POST"
-            className="flex items-center justify-between gap-4 flex-wrap"
-          >
-            <div className="text-sm text-slate-600">
-              {progress?.completedAt ? (
-                <span className="inline-flex items-center gap-2 text-emerald-700 font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" /> Completed
-                </span>
-              ) : (
-                "Finished this module? Mark it complete to unlock the next one."
-              )}
-            </div>
-            <button
-              type="submit"
-              className={`px-5 py-2.5 rounded-lg font-semibold transition ${
-                progress?.completedAt
-                  ? "bg-emerald-600 text-white hover:bg-emerald-700"
-                  : "bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-md hover:shadow-lg"
-              }`}
-            >
-              {progress?.completedAt ? "Re-mark complete" : "Mark complete ✓"}
-            </button>
-          </form>
+          <MarkCompleteButton moduleId={mod.id} isComplete={Boolean(progress?.completedAt)} />
         }
       >
         <Content />

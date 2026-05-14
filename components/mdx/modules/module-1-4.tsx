@@ -3,30 +3,7 @@
 import { Section, KeyMessage, Tag, Tabs, TwoColCompare, SummaryCards, ClassifyQuiz } from "../index";
 import { useState } from "react";
 
-export const META_14 = {
-  moduleNumber: "1.4",
-  title: "Privacy, Data, and Your Obligations",
-  minutes: 25,
-  sectionsCount: 9,
-  interactiveCount: 4,
-  objectives: [
-    "Describe FOIP, LA FOIP, HIPA, and PIPEDA in plain language",
-    "Apply the AUP classification to realistic AMS data",
-    "Distinguish approved from unapproved AI tools — and the cost of Shadow AI",
-    "Decide whether a given piece of data can be entered into a given AI tool",
-  ],
-  sections: [
-    { id: "laws", n: "1.4.1", label: "Sask privacy landscape" },
-    { id: "position", n: "1.4.2", label: "3sHealth's position" },
-    { id: "classification", n: "1.4.3", label: "AUP data classification" },
-    { id: "prohibited", n: "1.4.4", label: "Prohibited data" },
-    { id: "approved", n: "1.4.5", label: "Approved vs unapproved" },
-    { id: "shadow", n: "1.4.6", label: "Shadow AI" },
-    { id: "tenant", n: "1.4.7", label: "Tenant & residency" },
-    { id: "activity", n: "1.4.8", label: "Activity: Can you enter this?" },
-    { id: "summary", n: "1.4.9", label: "Summary" },
-  ],
-};
+export { META_14 } from "./meta";
 
 const CLASSES = [
   { k: "public", name: "Public", example: "Published press releases · 3shealth.ca content · job postings · open-access policies", rule: "Permitted in any approved AI tool.", caveat: "Don't mix Public with other classifications in the same prompt — output inherits the highest sensitivity.", color: "emerald" },

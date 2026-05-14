@@ -3,29 +3,7 @@
 import { Section, KeyMessage, Tag, Accordion, SummaryCards } from "../index";
 import { useState } from "react";
 
-export const META_15 = {
-  moduleNumber: "1.5",
-  title: "Reporting and Accountability",
-  minutes: 20,
-  sectionsCount: 8,
-  interactiveCount: 3,
-  objectives: [
-    "Apply the human-bookend accountability model to AI-assisted work",
-    "Recognize when an AI issue should be reported, and the category it falls into",
-    "Use ServiceNow to report an AI incident through the AI Incident Category",
-    "Describe the escalation path from reporter to AIGC",
-  ],
-  sections: [
-    { id: "accountability", n: "1.5.1", label: "Human accountability" },
-    { id: "incidents", n: "1.5.2", label: "What counts as an incident" },
-    { id: "how", n: "1.5.3", label: "How to report" },
-    { id: "escalation", n: "1.5.4", label: "Escalation path" },
-    { id: "help", n: "1.5.5", label: "Where to get help" },
-    { id: "culture", n: "1.5.6", label: "A note on culture" },
-    { id: "scenario", n: "1.5.7", label: "Scenario walkthrough" },
-    { id: "summary", n: "1.5.8", label: "Summary" },
-  ],
-};
+export { META_15 } from "./meta";
 
 function BookendFlow() {
   return (

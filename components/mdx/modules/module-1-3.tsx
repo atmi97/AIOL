@@ -3,27 +3,7 @@
 import { Section, KeyMessage, Tag, Accordion, FlipCards, SummaryCards } from "../index";
 import { useState } from "react";
 
-export const META_13 = {
-  moduleNumber: "1.3",
-  title: "AI Risks and Limitations",
-  minutes: 25,
-  sectionsCount: 6,
-  interactiveCount: 3,
-  objectives: [
-    "Explain what AI hallucinations are and why they occur",
-    "Identify common types of AI bias and their impact on administrative systems",
-    "Recognize the limits of AI accuracy in AMS contexts",
-    "Apply a simple skepticism habit to any AI-generated output",
-  ],
-  sections: [
-    { id: "hallucinations", n: "1.3.1", label: "Hallucinations" },
-    { id: "bias", n: "1.3.2", label: "Bias" },
-    { id: "errors", n: "1.3.3", label: "Errors in admin context" },
-    { id: "confidence", n: "1.3.4", label: "The confidence problem" },
-    { id: "spot", n: "1.3.5", label: "Activity: Spot the error" },
-    { id: "summary", n: "1.3.6", label: "Summary" },
-  ],
-};
+export { META_13 } from "./meta";
 
 type Span = { text: string; wrong?: boolean; why?: string };
 

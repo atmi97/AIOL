@@ -14,28 +14,7 @@ import {
   ClassifyQuiz,
 } from "../index";
 
-export const META_11 = {
-  moduleNumber: "1.1",
-  title: "What Is AI?",
-  minutes: 30,
-  sectionsCount: 7,
-  interactiveCount: 4,
-  objectives: [
-    "Define AI, machine learning, and generative AI in plain language",
-    "Distinguish AI from traditional software",
-    "Identify AI applications in everyday life and AMS systems",
-    "Describe what AI is not — its limits as a tool",
-  ],
-  sections: [
-    { id: "plain-language", n: "1.1.1", label: "AI in plain language" },
-    { id: "three-types", n: "1.1.2", label: "Three types of AI" },
-    { id: "already-use", n: "1.1.3", label: "AI you already use" },
-    { id: "ams-systems", n: "1.1.4", label: "AI in AMS systems" },
-    { id: "what-its-not", n: "1.1.5", label: "What AI is not" },
-    { id: "activity", n: "1.1.6", label: "Activity: Is this AI?" },
-    { id: "summary", n: "1.1.7", label: "Summary" },
-  ],
-};
+export { META_11 } from "./meta";
 
 export function Content11() {
   return (
