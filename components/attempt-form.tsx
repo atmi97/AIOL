@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 type QuestionView = {
@@ -13,18 +14,22 @@ type QuestionView = {
 export function AttemptForm({
   attemptId,
   submitUrl,
+  resultUrl,
   expiresAtIso,
   questions,
 }: {
   attemptId: string;
   submitUrl: string;
+  resultUrl: string;
   expiresAtIso: string;
   questions: QuestionView[];
 }) {
+  const router = useRouter();
   const formRef = useRef<HTMLFormElement>(null);
   const expiresMs = new Date(expiresAtIso).getTime();
   const [now, setNow] = useState(Date.now());
   const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [answered, setAnswered] = useState<Record<string, boolean>>({});
   const submittedRef = useRef(false);
 
@@ -37,12 +42,38 @@ export function AttemptForm({
   const mm = String(Math.floor(remaining / 60)).padStart(2, "0");
   const ss = String(remaining % 60).padStart(2, "0");
 
-  useEffect(() => {
-    if (remaining === 0 && !submittedRef.current && formRef.current) {
-      submittedRef.current = true;
-      setSubmitting(true);
-      formRef.current.requestSubmit();
+  async function handleSubmit(e?: React.FormEvent) {
+    if (e) e.preventDefault();
+    if (submittedRef.current || !formRef.current) return;
+    submittedRef.current = true;
+    setSubmitting(true);
+    setErrorMsg(null);
+    try {
+      const fd = new FormData(formRef.current);
+      const res = await fetch(submitUrl, { method: "POST", body: fd, redirect: "manual" });
+      // The route returns 303 with a Location header; in manual mode fetch surfaces it as opaque.
+      // Either way (200/303/redirected), we navigate the SPA to the result URL.
+      if (res.status >= 400) {
+        const txt = await res.text().catch(() => "");
+        setErrorMsg(`Submit failed (${res.status}). ${txt.slice(0, 200)}`);
+        submittedRef.current = false;
+        setSubmitting(false);
+        return;
+      }
+      router.push(resultUrl);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : String(err);
+      setErrorMsg(`Network error: ${msg}`);
+      submittedRef.current = false;
+      setSubmitting(false);
     }
+  }
+
+  useEffect(() => {
+    if (remaining === 0 && !submittedRef.current) {
+      handleSubmit();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [remaining]);
 
   const timerColor =
@@ -55,7 +86,7 @@ export function AttemptForm({
   const answeredCount = Object.keys(answered).length;
 
   return (
-    <form ref={formRef} action={submitUrl} method="POST" className="mt-6">
+    <form ref={formRef} onSubmit={handleSubmit} className="mt-6">
       <div
         className={`sticky top-2 z-30 rounded-xl bg-gradient-to-br ${timerColor} px-5 py-3 shadow-lg flex items-center justify-between gap-4 mb-6`}
       >
@@ -111,6 +142,11 @@ export function AttemptForm({
         ))}
       </div>
 
+      {errorMsg && (
+        <div className="mt-4 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs text-rose-900">
+          {errorMsg}
+        </div>
+      )}
       <div className="sticky bottom-3 z-30 mt-6 rounded-xl bg-white border border-slate-200 shadow-lg px-5 py-3 flex items-center justify-between gap-4">
         <div className="text-xs text-slate-500">
           {answeredCount < questions.length ? (
@@ -127,7 +163,6 @@ export function AttemptForm({
           type="submit"
           disabled={submitting}
           className="px-6 py-2.5 rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 text-white font-semibold shadow-md hover:shadow-lg disabled:opacity-50 transition"
-          onClick={() => setSubmitting(true)}
         >
           {submitting ? "Submitting…" : "Submit attempt"}
         </button>

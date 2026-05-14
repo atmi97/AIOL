@@ -68,6 +68,7 @@ export default async function AttemptPage({
           <AttemptForm
             attemptId={attempt.id}
             submitUrl={`/api/quiz/${slug}/attempt/${attempt.id}/submit`}
+            resultUrl={`/quiz/${slug}/attempt/${attempt.id}/result`}
             expiresAtIso={attempt.expiresAt.toISOString()}
             questions={questionsForClient}
           />
