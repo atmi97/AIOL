@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { submitAttempt } from "@/lib/quiz";
@@ -8,8 +9,7 @@ import { AttemptForm } from "@/components/attempt-form";
 async function submitAction(attemptId: string, formData: FormData) {
   "use server";
   const session = await auth();
-  if (!session?.user) throw new Error("Not authenticated");
-  const userId = (session.user as any).id as string;
+  const userId = session.user.id;
 
   const answers: Record<string, string[]> = {};
   for (const [key, value] of formData.entries()) {
@@ -32,18 +32,23 @@ export default async function AttemptPage({
 }) {
   const { slug, attemptId } = await params;
   const session = await auth();
-  if (!session?.user) redirect(`/signin?callbackUrl=/quiz/${slug}/attempt/${attemptId}`);
-  const userId = (session.user as any).id as string;
+  const userId = session.user.id;
 
   const attempt = await prisma.quizAttempt.findUnique({
     where: { id: attemptId },
-    include: { quiz: { include: { questions: true } } },
+    include: { quiz: { include: { questions: true, tier: true } } },
   });
-  if (!attempt || attempt.userId !== userId) return <div className="p-10">Attempt not found.</div>;
+  if (!attempt || attempt.userId !== userId) {
+    return (
+      <>
+        <SiteHeader />
+        <div className="max-w-4xl mx-auto px-6 py-20 text-center text-slate-500">Attempt not found.</div>
+      </>
+    );
+  }
 
   if (attempt.completedAt) redirect(`/quiz/${slug}/attempt/${attemptId}/result`);
 
-  // Enforce time limit on server.
   if (new Date() > attempt.expiresAt) {
     await submitAttempt({ userId, attemptId, answers: {} });
     redirect(`/quiz/${slug}/attempt/${attemptId}/result`);
@@ -55,36 +60,38 @@ export default async function AttemptPage({
     .map((id) => questionsRaw.find((q) => q.id === id))
     .filter(Boolean) as typeof questionsRaw;
 
-  // Prepare client-safe question objects (strip correct answers + rationale).
   const questionsForClient = ordered.map((q) => {
     const opts = JSON.parse(q.optionsJson) as { id: string; text: string }[];
-    const displayOptions = attempt.quiz.shuffleOptions ? opts : opts;
-    return {
-      id: q.id,
-      moduleRef: q.moduleRef,
-      type: q.type,
-      prompt: q.prompt,
-      options: displayOptions,
-    };
+    return { id: q.id, moduleRef: q.moduleRef, type: q.type, prompt: q.prompt, options: opts };
   });
 
   return (
     <>
       <SiteHeader />
-      <main className="max-w-3xl mx-auto px-6 py-8">
-        <h1 className="text-2xl font-bold text-brand-800">{attempt.quiz.title}</h1>
-        <p className="text-sm text-slate-500 mt-1">
-          {questionsForClient.length} questions · Time limit{" "}
-          {attempt.quiz.timeLimitMinutes} minutes
-        </p>
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-800">
+        <div className="max-w-3xl mx-auto px-6 py-10">
+          <div className="flex items-center gap-3 text-xs font-medium text-brand-700 uppercase tracking-wider">
+            <Link href={`/tier/${attempt.quiz.tierId}`} className="hover:underline">
+              {attempt.quiz.tier.title}
+            </Link>
+            <span className="text-slate-300">/</span>
+            <span className="text-slate-500">Attempt in progress</span>
+          </div>
+          <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">
+            {attempt.quiz.title}
+          </h1>
+          <p className="mt-1 text-sm text-slate-500">
+            {questionsForClient.length} questions · {attempt.quiz.timeLimitMinutes} minute time limit
+          </p>
 
-        <AttemptForm
-          attemptId={attempt.id}
-          expiresAtIso={attempt.expiresAt.toISOString()}
-          questions={questionsForClient}
-          action={submitAction.bind(null, attempt.id)}
-        />
-      </main>
+          <AttemptForm
+            attemptId={attempt.id}
+            expiresAtIso={attempt.expiresAt.toISOString()}
+            questions={questionsForClient}
+            action={submitAction.bind(null, attempt.id)}
+          />
+        </div>
+      </div>
     </>
   );
 }
