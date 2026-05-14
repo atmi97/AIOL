@@ -253,9 +253,9 @@ export function Tag({
     emerald: "bg-emerald-50 text-emerald-800 border-emerald-200",
   };
   return (
-    <div className={`inline-flex px-3 py-1.5 rounded-full text-xs font-medium border ${map[tone]}`}>
+    <span className={`inline-flex px-3 py-1.5 rounded-full text-xs font-medium border ${map[tone]}`}>
       {children}
-    </div>
+    </span>
   );
 }
 

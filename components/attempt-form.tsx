@@ -12,14 +12,14 @@ type QuestionView = {
 
 export function AttemptForm({
   attemptId,
+  submitUrl,
   expiresAtIso,
   questions,
-  action,
 }: {
   attemptId: string;
+  submitUrl: string;
   expiresAtIso: string;
   questions: QuestionView[];
-  action: (formData: FormData) => Promise<void>;
 }) {
   const formRef = useRef<HTMLFormElement>(null);
   const expiresMs = new Date(expiresAtIso).getTime();
@@ -55,7 +55,7 @@ export function AttemptForm({
   const answeredCount = Object.keys(answered).length;
 
   return (
-    <form ref={formRef} action={action} className="mt-6">
+    <form ref={formRef} action={submitUrl} method="POST" className="mt-6">
       <div
         className={`sticky top-2 z-30 rounded-xl bg-gradient-to-br ${timerColor} px-5 py-3 shadow-lg flex items-center justify-between gap-4 mb-6`}
       >

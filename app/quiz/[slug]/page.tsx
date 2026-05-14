@@ -1,17 +1,8 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { attemptsRemaining, bestScore, startAttempt } from "@/lib/quiz";
+import { attemptsRemaining, bestScore } from "@/lib/quiz";
 import { SiteHeader } from "@/components/site-header";
-
-async function startAttemptAction(quizId: string) {
-  "use server";
-  const session = await auth();
-  const userId = session.user.id;
-  const { attempt } = await startAttempt(userId, quizId);
-  redirect(`/quiz/${quizId}/attempt/${attempt.id}`);
-}
 
 export default async function QuizIntro({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -125,12 +116,7 @@ export default async function QuizIntro({ params }: { params: Promise<{ slug: st
 
           <div className="mt-10">
             {remaining > 0 ? (
-              <form
-                action={async () => {
-                  "use server";
-                  await startAttemptAction(quiz.id);
-                }}
-              >
+              <form action={`/api/quiz/${quiz.id}/start`} method="POST">
                 <button
                   type="submit"
                   className="px-7 py-3.5 rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 text-white font-semibold shadow-lg shadow-brand-600/25 hover:shadow-xl hover:shadow-brand-600/30 transition"

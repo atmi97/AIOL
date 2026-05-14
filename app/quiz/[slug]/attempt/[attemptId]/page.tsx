@@ -6,25 +6,6 @@ import { submitAttempt } from "@/lib/quiz";
 import { SiteHeader } from "@/components/site-header";
 import { AttemptForm } from "@/components/attempt-form";
 
-async function submitAction(attemptId: string, formData: FormData) {
-  "use server";
-  const session = await auth();
-  const userId = session.user.id;
-
-  const answers: Record<string, string[]> = {};
-  for (const [key, value] of formData.entries()) {
-    if (!key.startsWith("q:")) continue;
-    const qId = key.slice(2);
-    if (!answers[qId]) answers[qId] = [];
-    answers[qId].push(String(value));
-  }
-
-  const attempt = await prisma.quizAttempt.findUnique({ where: { id: attemptId } });
-  if (!attempt) throw new Error("Attempt not found");
-  await submitAttempt({ userId, attemptId, answers });
-  redirect(`/quiz/${attempt.quizId}/attempt/${attemptId}/result`);
-}
-
 export default async function AttemptPage({
   params,
 }: {
@@ -86,9 +67,9 @@ export default async function AttemptPage({
 
           <AttemptForm
             attemptId={attempt.id}
+            submitUrl={`/api/quiz/${slug}/attempt/${attempt.id}/submit`}
             expiresAtIso={attempt.expiresAt.toISOString()}
             questions={questionsForClient}
-            action={submitAction.bind(null, attempt.id)}
           />
         </div>
       </div>
